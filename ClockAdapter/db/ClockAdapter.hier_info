@@ -1,0 +1,15 @@
+|ClockAdapter
+processor_clk => processor_clk.IN1
+update_clk => nextUpdate.IN1
+reset => reset.IN1
+must_update <= myDFFE:catchUpdate.port4
+
+
+|ClockAdapter|myDFFE:catchUpdate
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+clrn => q~reg0.ACLR
+ena => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

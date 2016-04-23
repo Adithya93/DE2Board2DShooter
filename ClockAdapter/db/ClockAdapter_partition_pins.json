@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "must_update",
+					"strict" : false
+				},
+				{
+					"name" : "update_clk",
+					"strict" : false
+				},
+				{
+					"name" : "processor_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

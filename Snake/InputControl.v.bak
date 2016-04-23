@@ -1,0 +1,12 @@
+module IOController(left, right, shoot, stop, outData); // For Single player using push-buttons
+	input left, right, shoot, stop; // active-high pulses from push-buttons
+	output [31:0] outData;
+	
+	
+	wire IOwriteEnable;
+	
+	assign IOwriteEnable = left | right | shoot | stop;
+	
+
+
+endmodule

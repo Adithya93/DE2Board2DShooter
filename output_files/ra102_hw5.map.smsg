@@ -1,0 +1,4 @@
+Warning (10273): Verilog HDL warning at ra102_hw5.v(541): extended using "x" or "z" File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ra102_hw5.v Line: 541
+Warning (10273): Verilog HDL warning at ra102_hw5.v(2258): extended using "x" or "z" File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ra102_hw5.v Line: 2258
+Info (10281): Verilog HDL Declaration information at ra102_hw5.v(3200): object "y2" differs only in case from object "Y2" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ra102_hw5.v Line: 3200
+Info (10281): Verilog HDL Declaration information at ra102_hw5.v(3200): object "y1" differs only in case from object "Y1" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ra102_hw5.v Line: 3200

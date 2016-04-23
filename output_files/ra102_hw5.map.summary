@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Apr 21 23:32:52 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : ra102_hw5
+Top-level Entity Name : skeleton
+Family : Cyclone IV E
+Total logic elements : 5,205
+    Total combinational functions : 3,592
+    Dedicated logic registers : 2,087
+Total registers : 2087
+Total pins : 164
+Total virtual pins : 0
+Total memory bits : 262,144
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

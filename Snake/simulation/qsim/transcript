@@ -1,0 +1,82 @@
+# do Snake.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 16:30:41 on Apr 23,2016
+# vlog -work work Snake.vo 
+# -- Compiling module processor
+# 
+# Top level modules:
+# 	processor
+# End time: 16:30:42 on Apr 23,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 16:30:42 on Apr 23,2016
+# vlog -work work debugShootControl2.vwf.vt 
+# -- Compiling module processor_vlg_vec_tst
+# 
+# Top level modules:
+# 	processor_vlg_vec_tst
+# End time: 16:30:43 on Apr 23,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.processor_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 16:30:43 on Apr 23,2016
+# Loading work.processor_vlg_vec_tst
+# Loading work.processor
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# SDF 10.4b Compiler 2015.05 May 27 2015
+# 
+# Loading instances from Snake_v.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 17288 statements exceeds ModelSim Altera Starter recommended capacity.
+# Expect performance to be adversely affected.
+# Loading timing data from Snake_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /processor_vlg_vec_tst File: debugShootControl2.vwf.vt
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2604 ps, aclr:2630 ps, 186 ps );
+#    Time: 2630 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a18 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2608 ps, aclr:2634 ps, 186 ps );
+#    Time: 2634 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a13 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2611 ps, aclr:2637 ps, 186 ps );
+#    Time: 2637 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a9 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2615 ps, aclr:2641 ps, 186 ps );
+#    Time: 2641 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a17 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2616 ps, aclr:2642 ps, 186 ps );
+#    Time: 2642 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a7 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2618 ps, aclr:2644 ps, 186 ps );
+#    Time: 2644 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a20 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2620 ps, aclr:2646 ps, 186 ps );
+#    Time: 2646 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a6 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2621 ps, aclr:2647 ps, 186 ps );
+#    Time: 2647 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a30 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2624 ps, aclr:2650 ps, 186 ps );
+#    Time: 2650 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a12 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2628 ps, aclr:2654 ps, 186 ps );
+#    Time: 2654 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a14 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2631 ps, aclr:2657 ps, 186 ps );
+#    Time: 2657 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a15 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2633 ps, aclr:2659 ps, 186 ps );
+#    Time: 2659 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a16 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2635 ps, aclr:2661 ps, 186 ps );
+#    Time: 2661 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a4 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2636 ps, aclr:2662 ps, 186 ps );
+#    Time: 2662 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a27 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2638 ps, aclr:2664 ps, 186 ps );
+#    Time: 2664 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a0 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4544): $hold( posedge clk:2639 ps, aclr:2665 ps, 186 ps );
+#    Time: 2665 ps  Iteration: 1  Instance: /processor_vlg_vec_tst/i1/\myimem|altsyncram_component|auto_generated|ram_block1a2 /dataout_a_register
+# ** Error: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_primitives.v(294): $hold( posedge clk &&& sloaddata:2739 ps, asdata:2745 ps, 186 ps );
+#    Time: 2745 ps  Iteration: 0  Instance: /processor_vlg_vec_tst/i1/\myXMReg|PCReg|loop1[1].dff|q 
+# ** Note: $finish    : debugShootControl2.vwf.vt(121)
+#    Time: 3 us  Iteration: 0  Instance: /processor_vlg_vec_tst
+# End time: 16:31:01 on Apr 23,2016, Elapsed time: 0:00:18
+# Errors: 17, Warnings: 1

@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ClockAdapter/ClockAdapter.v
+source_file = 1, C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ClockAdapter/ClockAdapterTest.vwf
+source_file = 1, C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/ClockAdapter/db/ClockAdapter.cbx.xml
+design_name = ClockAdapter
+instance = comp, \must_update~output , must_update~output, ClockAdapter, 1
+instance = comp, \processor_clk~input , processor_clk~input, ClockAdapter, 1
+instance = comp, \update_clk~input , update_clk~input, ClockAdapter, 1
+instance = comp, \reset~input , reset~input, ClockAdapter, 1
+instance = comp, \catchUpdate|q , catchUpdate|q, ClockAdapter, 1

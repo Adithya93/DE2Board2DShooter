@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="toVGA[0]" source="Pin Planner" >
+		</pin>
+		<pin name="toVGA[1]" source="Pin Planner" >
+		</pin>
+		<pin name="toVGA[2]" source="Pin Planner" >
+		</pin>
+		<pin name="led1" source="Pin Planner" >
+		</pin>
+		<pin name="led2" source="Pin Planner" >
+		</pin>
+		<pin name="led3" source="Pin Planner" >
+		</pin>
+		<pin name="led4" source="Pin Planner" >
+		</pin>
+		<pin name="up" source="Pin Planner" >
+		</pin>
+		<pin name="down" source="Pin Planner" >
+		</pin>
+		<pin name="right2" source="Pin Planner" >
+		</pin>
+		<pin name="left2" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/simulation/qsim
+vskeleton
+!s110 1461296473
+!i10b 1
+!s100 5^:oNOj7KVQc<e<0QPLG;3
+I@^7`iLFaWmOd^]XolMN4V0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1461296465
+8ra102_hw5.vo
+Fra102_hw5.vo
+L0 32
+Z2 OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1461296472.000000
+!s107 ra102_hw5.vo|
+!s90 -work|work|ra102_hw5.vo|
+!i113 1
+Z3 o-work work
+vskeleton_vlg_vec_tst
+!s110 1461296474
+!i10b 1
+!s100 4VSAS0TD13jl?`1;O:ck?3
+I2j@61lD?cLVM0ojmM[?;h1
+R1
+R0
+w1461296452
+8checkAgain.vwf.vt
+FcheckAgain.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+!s108 1461296474.000000
+!s107 checkAgain.vwf.vt|
+!s90 -work|work|checkAgain.vwf.vt|
+!i113 1
+R3
