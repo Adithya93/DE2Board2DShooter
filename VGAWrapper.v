@@ -167,7 +167,7 @@ module kbInput(data, direction, shoot, started);
 	wire [3:0] code;
 	assign code = data;
 	
-	output started;
+	output reg started;
 	
 	//wire latchShot;
 	//wire [3:0] lastCode;

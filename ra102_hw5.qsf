@@ -51,3 +51,21 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SOURCE_FILE imem.cmp
+set_global_assignment -name SOURCE_FILE dmem.cmp
+set_global_assignment -name QIP_FILE imem.qip
+set_global_assignment -name QIP_FILE dmem.qip
+set_global_assignment -name SYSTEMVERILOG_FILE lcd.sv
+set_global_assignment -name VERILOG_FILE VGAWrapperOld.v
+set_global_assignment -name VERILOG_FILE VGAWrapper.v
+set_global_assignment -name VERILOG_FILE tryIntegrating.v
+set_global_assignment -name VERILOG_FILE Snake.v
+set_global_assignment -name VERILOG_FILE simpleCount.v
+set_global_assignment -name VERILOG_FILE ra102_hw5.v
+set_global_assignment -name VERILOG_FILE IR_RECEIVER.v
+set_global_assignment -name VERILOG_FILE InputControl.v
+set_global_assignment -name VERILOG_FILE imem_inst.v
+set_global_assignment -name VERILOG_FILE imem.v
+set_global_assignment -name VERILOG_FILE dmem_inst.v
+set_global_assignment -name VERILOG_FILE dmem.v
+set_global_assignment -name VERILOG_FILE clockAdapter.v
