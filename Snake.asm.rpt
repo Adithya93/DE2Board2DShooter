@@ -1,5 +1,9 @@
 Assembler report for Snake
+<<<<<<< HEAD
 Sun Apr 24 01:04:10 2016
+=======
+Fri Apr 22 16:14:56 2016
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -38,7 +42,11 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< HEAD
 ; Assembler Status      ; Successful - Sun Apr 24 01:04:10 2016 ;
+=======
+; Assembler Status      ; Successful - Fri Apr 22 16:14:56 2016 ;
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 ; Revision Name         ; Snake                                 ;
 ; Top-level Entity Name ; processor                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -68,8 +76,13 @@ agreement for further details.
 ; Option         ; Setting                                                                            ;
 +----------------+------------------------------------------------------------------------------------+
 ; Device         ; EP4CE115F29C7                                                                      ;
+<<<<<<< HEAD
 ; JTAG usercode  ; 0x008919E5                                                                         ;
 ; Checksum       ; 0x008919E5                                                                         ;
+=======
+; JTAG usercode  ; 0x008DAB90                                                                         ;
+; Checksum       ; 0x008DAB90                                                                         ;
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 +----------------+------------------------------------------------------------------------------------+
 
 
@@ -79,14 +92,24 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+<<<<<<< HEAD
     Info: Processing started: Sun Apr 24 01:04:02 2016
+=======
+    Info: Processing started: Fri Apr 22 16:14:49 2016
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Snake -c Snake
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
+<<<<<<< HEAD
     Info: Peak virtual memory: 771 megabytes
     Info: Processing ended: Sun Apr 24 01:04:10 2016
     Info: Elapsed time: 00:00:08
+=======
+    Info: Peak virtual memory: 772 megabytes
+    Info: Processing ended: Fri Apr 22 16:14:56 2016
+    Info: Elapsed time: 00:00:07
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
     Info: Total CPU time (on all processors): 00:00:06
 
 

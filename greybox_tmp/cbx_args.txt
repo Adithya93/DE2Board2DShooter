@@ -1,7 +1,11 @@
 ADDRESS_ACLR_A=NONE
 CLOCK_ENABLE_INPUT_A=NORMAL
 CLOCK_ENABLE_OUTPUT_A=BYPASS
+<<<<<<< HEAD
 INIT_FILE=./asyncLoopImem.mif
+=======
+INIT_FILE=./verifyLWAddImem.mif
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 INTENDED_DEVICE_FAMILY="Cyclone IV GX"
 NUMWORDS_A=4096
 OPERATION_MODE=ROM

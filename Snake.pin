@@ -84,6 +84,7 @@ VCCIO8                       : A13       : power  :                   : 2.5V    
 GND+                         : A14       :        :                   :         : 8         :                
 GND+                         : A15       :        :                   :         : 7         :                
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
+<<<<<<< HEAD
 lcd_data[28]                 : A17       : output : 2.5 V             :         : 7         : N              
 speedData[13]                : A18       : output : 2.5 V             :         : 7         : N              
 speedData[25]                : A19       : output : 2.5 V             :         : 7         : N              
@@ -114,15 +115,48 @@ newSTATUS[12]                : AA16      : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA17      :        :                   :         : 4         :                
 VCCIO4                       : AA18      : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 4         :                
+=======
+debug_word[8]                : A17       : output : 2.5 V             :         : 7         : N              
+speedData[15]                : A18       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7         :                
+VCCIO7                       : A20       : power  :                   : 2.5V    : 7         :                
+seg8[5]                      : A21       : output : 2.5 V             :         : 7         : N              
+seg6[0]                      : A22       : output : 2.5 V             :         : 7         : N              
+seg5[3]                      : A23       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : A24       : power  :                   : 2.5V    : 7         :                
+speedData[5]                 : A25       : output : 2.5 V             :         : 7         : N              
+seg5[0]                      : A26       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : A27       : power  :                   : 2.5V    : 7         :                
+VCCIO2                       : AA1       : power  :                   : 2.5V    : 2         :                
+GND                          : AA2       : gnd    :                   :         :           :                
+speedData[22]                : AA3       : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 2         :                
+speedData[27]                : AA8       : output : 2.5 V             :         : 3         : N              
+GNDA1                        : AA9       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 3         :                
+VCCIO3                       : AA11      : power  :                   : 2.5V    : 3         :                
+debug_word[4]                : AA12      : output : 2.5 V             :         : 3         : N              
+debug_word[30]               : AA13      : output : 2.5 V             :         : 3         : N              
+debug_word[14]               : AA14      : output : 2.5 V             :         : 3         : N              
+RegWriteData[1]              : AA15      : output : 2.5 V             :         : 4         : N              
+RegWriteData[7]              : AA16      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA17      :        :                   :         : 4         :                
+VCCIO4                       : AA18      : power  :                   : 2.5V    : 4         :                
+seg1[1]                      : AA19      : output : 2.5 V             :         : 4         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GNDA4                        : AA20      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 4         :                
+seg8[4]                      : AA21      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA23      :        :                   :         : 5         :                
 lcd_data[31]                 : AA24      : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA25      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA26      :        :                   :         : 5         :                
+lcd_blon                     : AA26      : output : 2.5 V             :         : 5         : N              
 GND                          : AA27      : gnd    :                   :         :           :                
 VCCIO5                       : AA28      : power  :                   : 2.5V    : 5         :                
+<<<<<<< HEAD
 RegWriteData[14]             : AB1       : output : 2.5 V             :         : 2         : N              
 enemyBulletXPosition[7]      : AB2       : output : 2.5 V             :         : 2         : N              
 RegWriteData[22]             : AB3       : output : 2.5 V             :         : 2         : N              
@@ -172,12 +206,64 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC18      :        :                   :      
 speedData[30]                : AC19      : output : 2.5 V             :         : 4         : N              
 GND                          : AC20      : gnd    :                   :         :           :                
 lcd_data[1]                  : AC21      : output : 2.5 V             :         : 4         : N              
+=======
+debug_addr[0]                : AB1       : output : 2.5 V             :         : 2         : N              
+debug_addr[8]                : AB2       : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :         : 2         :                
+speedData[21]                : AB6       : output : 2.5 V             :         : 2         : N              
+seg7[5]                      : AB7       : output : 2.5 V             :         : 3         : N              
+speedData[3]                 : AB8       : output : 2.5 V             :         : 3         : N              
+seg3[5]                      : AB9       : output : 2.5 V             :         : 3         : N              
+debug_addr[5]                : AB10      : output : 2.5 V             :         : 3         : N              
+debug_word[28]               : AB11      : output : 2.5 V             :         : 3         : N              
+bulletYPosition[2]           : AB12      : output : 2.5 V             :         : 3         : N              
+readingBulletY               : AB13      : output : 2.5 V             :         : 3         : N              
+debug_addr[11]               : AB14      : output : 2.5 V             :         : 3         : N              
+RegWriteData[9]              : AB15      : output : 2.5 V             :         : 4         : N              
+RegWriteData[0]              : AB16      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4         :                
+seg7[3]                      : AB18      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB19      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB20      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB22      :        :                   :         : 4         :                
+resetn                       : AB23      : input  : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB24      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB25      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB26      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB27      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC2       :        :                   :         : 2         :                
+speedData[31]                : AC3       : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC4       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC5       :        :                   :         : 2         :                
+GND                          : AC6       : gnd    :                   :         :           :                
+speedData[10]                : AC7       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC8       :        :                   :         : 3         :                
+GND                          : AC9       : gnd    :                   :         :           :                
+debug_word[25]               : AC10      : output : 2.5 V             :         : 3         : N              
+debug_addr[6]                : AC11      : output : 2.5 V             :         : 3         : N              
+bulletYPosition[6]           : AC12      : output : 2.5 V             :         : 3         : N              
+GND                          : AC13      : gnd    :                   :         :           :                
+debug_word[7]                : AC14      : output : 2.5 V             :         : 3         : N              
+debug_word[13]               : AC15      : output : 2.5 V             :         : 4         : N              
+GND                          : AC16      : gnd    :                   :         :           :                
+seg2[4]                      : AC17      : output : 2.5 V             :         : 4         : N              
+lcd_rw                       : AC18      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC19      :        :                   :         : 4         :                
+GND                          : AC20      : gnd    :                   :         :           :                
+seg4[6]                      : AC21      : output : 2.5 V             :         : 4         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC22      :        :                   :         : 4         :                
 GND                          : AC23      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC24      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC25      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC26      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC27      :        :                   :         : 5         :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :         : 5         :                
 playerYPosition[5]           : AD1       : output : 2.5 V             :         : 2         : N              
 RegWriteData[27]             : AD2       : output : 2.5 V             :         : 2         : N              
@@ -230,12 +316,67 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE20      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE21      :        :                   :         : 4         :                
 ps2_out[7]                   : AE22      : input  : 2.5 V             :         : 4         : N              
 speedData[14]                : AE23      : output : 2.5 V             :         : 4         : N              
+=======
+seg8[2]                      : AC28      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD3       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD4       :        :                   :         : 3         :                
+speedData[9]                 : AD5       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AD6       : power  :                   : 2.5V    : 3         :                
+seg1[6]                      : AD7       : output : 2.5 V             :         : 3         : N              
+speedData[7]                 : AD8       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AD9       : power  :                   : 2.5V    : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD10      :        :                   :         : 3         :                
+debug_addr[1]                : AD11      : output : 2.5 V             :         : 3         : N              
+bulletYPosition[8]           : AD12      : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AD13      : power  :                   : 2.5V    : 3         :                
+RegWriteData[6]              : AD14      : output : 2.5 V             :         : 3         : N              
+debug_addr[2]                : AD15      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AD16      : power  :                   : 2.5V    : 4         :                
+RegWriteData[27]             : AD17      : output : 2.5 V             :         : 4         : N              
+seg3[0]                      : AD18      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD19      :        :                   :         : 4         :                
+VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4         :                
+lcd_data[5]                  : AD22      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AD23      : power  :                   : 2.5V    : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 4         :                
+speedData[26]                : AD25      : output : 2.5 V             :         : 4         : N              
+seg7[2]                      : AD26      : output : 2.5 V             :         : 5         : N              
+seg3[3]                      : AD27      : output : 2.5 V             :         : 5         : N              
+seg5[6]                      : AD28      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE3       :        :                   :         : 2         :                
+speedData[6]                 : AE4       : output : 2.5 V             :         : 3         : N              
+seg7[0]                      : AE5       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE6       :        :                   :         : 3         :                
+debug_word[29]               : AE7       : output : 2.5 V             :         : 3         : N              
+speedData[0]                 : AE8       : output : 2.5 V             :         : 3         : N              
+right                        : AE9       : output : 2.5 V             :         : 3         : N              
+bulletXPosition[4]           : AE10      : output : 2.5 V             :         : 3         : N              
+debug_word[2]                : AE11      : output : 2.5 V             :         : 3         : N              
+debug_word[23]               : AE12      : output : 2.5 V             :         : 3         : N              
+bulletYPosition[5]           : AE13      : output : 2.5 V             :         : 3         : N              
+bulletYPosition[3]           : AE14      : output : 2.5 V             :         : 3         : N              
+debug_word[27]               : AE15      : output : 2.5 V             :         : 4         : N              
+RegWriteData[4]              : AE16      : output : 2.5 V             :         : 4         : N              
+RegWriteData[5]              : AE17      : output : 2.5 V             :         : 4         : N              
+RegWriteData[30]             : AE18      : output : 2.5 V             :         : 4         : N              
+RegWriteData[25]             : AE19      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE20      :        :                   :         : 4         :                
+lcd_en                       : AE21      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE22      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE25      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE28      :        :                   :         : 5         :                
 GND                          : AF1       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 lcd_data[2]                  : AF2       : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF3       :        :                   :         : 3         :                
 speedData[5]                 : AF4       : output : 2.5 V             :         : 3         : N              
@@ -261,10 +402,38 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :      
 newSTATUS[28]                : AF24      : output : 2.5 V             :         : 4         : N              
 newSTATUS[31]                : AF25      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF26      :        :                   :         : 4         :                
+=======
+speedData[14]                : AF2       : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF3       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3         :                
+seg1[5]                      : AF5       : output : 2.5 V             :         : 3         : N              
+seg2[0]                      : AF6       : output : 2.5 V             :         : 3         : N              
+seg6[4]                      : AF7       : output : 2.5 V             :         : 3         : N              
+seg1[2]                      : AF8       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF9       :        :                   :         : 3         :                
+seg5[2]                      : AF10      : output : 2.5 V             :         : 3         : N              
+playerXPosition[9]           : AF11      : output : 2.5 V             :         : 3         : N              
+debug_word[18]               : AF12      : output : 2.5 V             :         : 3         : N              
+bulletXPosition[3]           : AF13      : output : 2.5 V             :         : 3         : N              
+debug_word[1]                : AF14      : output : 2.5 V             :         : 3         : N              
+leds[6]                      : AF15      : output : 2.5 V             :         : 4         : N              
+RegWriteData[8]              : AF16      : output : 2.5 V             :         : 4         : N              
+RegWriteData[14]             : AF17      : output : 2.5 V             :         : 4         : N              
+RegWriteData[12]             : AF18      : output : 2.5 V             :         : 4         : N              
+stop                         : AF19      : output : 2.5 V             :         : 4         : N              
+RegWriteData[20]             : AF20      : output : 2.5 V             :         : 4         : N              
+leds[5]                      : AF21      : output : 2.5 V             :         : 4         : N              
+seg3[1]                      : AF22      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :         : 4         :                
+RegWriteData[23]             : AF24      : output : 2.5 V             :         : 4         : N              
+seg4[4]                      : AF25      : output : 2.5 V             :         : 4         : N              
+RegWriteData[28]             : AF26      : output : 2.5 V             :         : 4         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF27      :        :                   :         : 5         :                
 GND                          : AF28      : gnd    :                   :         :           :                
 VCCIO2                       : AG1       : power  :                   : 2.5V    : 2         :                
 GND                          : AG2       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3         :                
 speedData[3]                 : AG4       : output : 2.5 V             :         : 3         : N              
 GND                          : AG5       : gnd    :                   :         :           :                
@@ -275,10 +444,23 @@ GND                          : AG9       : gnd    :                   :         
 debug_addr[8]                : AG10      : output : 2.5 V             :         : 3         : N              
 debug_addr[3]                : AG11      : output : 2.5 V             :         : 3         : N              
 STATUS[13]                   : AG12      : output : 2.5 V             :         : 3         : N              
+=======
+seg6[3]                      : AG3       : output : 2.5 V             :         : 3         : N              
+lcd_data[4]                  : AG4       : output : 2.5 V             :         : 3         : N              
+GND                          : AG5       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG6       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG7       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3         :                
+GND                          : AG9       : gnd    :                   :         :           :                
+debug_word[19]               : AG10      : output : 2.5 V             :         : 3         : N              
+bulletXPosition[6]           : AG11      : output : 2.5 V             :         : 3         : N              
+debug_word[31]               : AG12      : output : 2.5 V             :         : 3         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : AG13      : gnd    :                   :         :           :                
 GND+                         : AG14      :        :                   :         : 3         :                
 GND+                         : AG15      :        :                   :         : 4         :                
 GND                          : AG16      : gnd    :                   :         :           :                
+<<<<<<< HEAD
 debug_data[15]               : AG17      : output : 2.5 V             :         : 4         : N              
 STATUS[4]                    : AG18      : output : 2.5 V             :         : 4         : N              
 debug_addr[0]                : AG19      : output : 2.5 V             :         : 4         : N              
@@ -288,10 +470,22 @@ newSTATUS[30]                : AG22      : output : 2.5 V             :         
 STATUS[17]                   : AG23      : output : 2.5 V             :         : 4         : N              
 GND                          : AG24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4         :                
+=======
+debug_word[26]               : AG17      : output : 2.5 V             :         : 4         : N              
+RegWriteData[2]              : AG18      : output : 2.5 V             :         : 4         : N              
+RegWriteData[31]             : AG19      : output : 2.5 V             :         : 4         : N              
+GND                          : AG20      : gnd    :                   :         :           :                
+RegWriteData[26]             : AG21      : output : 2.5 V             :         : 4         : N              
+seg4[2]                      : AG22      : output : 2.5 V             :         : 4         : N              
+RegWriteData[24]             : AG23      : output : 2.5 V             :         : 4         : N              
+GND                          : AG24      : gnd    :                   :         :           :                
+lcd_data[2]                  : AG25      : output : 2.5 V             :         : 4         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG26      :        :                   :         : 4         :                
 GND                          : AG27      : gnd    :                   :         :           :                
 VCCIO5                       : AG28      : power  :                   : 2.5V    : 5         :                
 VCCIO3                       : AH2       : power  :                   : 2.5V    : 3         :                
+<<<<<<< HEAD
 lcd_data[21]                 : AH3       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 3         :                
 VCCIO3                       : AH5       : power  :                   : 2.5V    : 3         :                
@@ -302,10 +496,23 @@ VCCIO3                       : AH9       : power  :                   : 2.5V    
 RegWriteData[23]             : AH10      : output : 2.5 V             :         : 3         : N              
 newSTATUS[3]                 : AH11      : output : 2.5 V             :         : 3         : N              
 debug_data[8]                : AH12      : output : 2.5 V             :         : 3         : N              
+=======
+seg1[3]                      : AH3       : output : 2.5 V             :         : 3         : N              
+speedData[24]                : AH4       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AH5       : power  :                   : 2.5V    : 3         :                
+seg1[0]                      : AH6       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH7       :        :                   :         : 3         :                
+speedData[13]                : AH8       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AH9       : power  :                   : 2.5V    : 3         :                
+debug_word[0]                : AH10      : output : 2.5 V             :         : 3         : N              
+bulletXPosition[1]           : AH11      : output : 2.5 V             :         : 3         : N              
+debug_word[3]                : AH12      : output : 2.5 V             :         : 3         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 VCCIO3                       : AH13      : power  :                   : 2.5V    : 3         :                
 GND+                         : AH14      :        :                   :         : 3         :                
 GND+                         : AH15      :        :                   :         : 4         :                
 VCCIO4                       : AH16      : power  :                   : 2.5V    : 4         :                
+<<<<<<< HEAD
 shouldBranch2                : AH17      : output : 2.5 V             :         : 4         : N              
 debug_data[29]               : AH18      : output : 2.5 V             :         : 4         : N              
 STATUS[3]                    : AH19      : output : 2.5 V             :         : 4         : N              
@@ -315,6 +522,17 @@ newSTATUS[27]                : AH22      : output : 2.5 V             :         
 debug_data[14]               : AH23      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4         :                
+=======
+leds[7]                      : AH17      : output : 2.5 V             :         : 4         : N              
+RegWriteData[29]             : AH18      : output : 2.5 V             :         : 4         : N              
+RegWriteData[13]             : AH19      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
+RegWriteData[10]             : AH21      : output : 2.5 V             :         : 4         : N              
+RegWriteData[11]             : AH22      : output : 2.5 V             :         : 4         : N              
+speedData[30]                : AH23      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
+lcd_on                       : AH25      : output : 2.5 V             :         : 4         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH26      :        :                   :         : 4         :                
 VCCIO4                       : AH27      : power  :                   : 2.5V    : 4         :                
 VCCIO1                       : B1        : power  :                   : 2.5V    : 1         :                
@@ -333,6 +551,7 @@ GND                          : B13       : gnd    :                   :         
 GND+                         : B14       :        :                   :         : 8         :                
 GND+                         : B15       :        :                   :         : 7         :                
 GND                          : B16       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 leds[3]                      : B17       : output : 2.5 V             :         : 7         : N              
 speedData[6]                 : B18       : output : 2.5 V             :         : 7         : N              
 speedData[19]                : B19       : output : 2.5 V             :         : 7         : N              
@@ -343,6 +562,18 @@ lcd_write                    : B23       : output : 2.5 V             :         
 GND                          : B24       : gnd    :                   :         :           :                
 lcd_data[19]                 : B25       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B26       :        :                   :         : 7         :                
+=======
+debug_word[21]               : B17       : output : 2.5 V             :         : 7         : N              
+speedData[8]                 : B18       : output : 2.5 V             :         : 7         : N              
+speedData[19]                : B19       : output : 2.5 V             :         : 7         : N              
+GND                          : B20       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B21       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 7         :                
+seg3[6]                      : B23       : output : 2.5 V             :         : 7         : N              
+GND                          : B24       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B25       :        :                   :         : 7         :                
+speedData[20]                : B26       : output : 2.5 V             :         : 7         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : B27       : gnd    :                   :         :           :                
 VCCIO6                       : B28       : power  :                   : 2.5V    : 6         :                
 GND                          : C1        : gnd    :                   :         :           :                
@@ -352,6 +583,7 @@ speedData[29]                : C4        : output : 2.5 V             :         
 speedData[15]                : C5        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
+<<<<<<< HEAD
 ps2_key_pressed              : C8        : input  : 2.5 V             :         : 8         : N              
 RegWriteData[26]             : C9        : output : 2.5 V             :         : 8         : N              
 playerXPosition[9]           : C10       : output : 2.5 V             :         : 8         : N              
@@ -371,6 +603,27 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C23       :        :                   :      
 lcd_data[26]                 : C24       : output : 2.5 V             :         : 7         : N              
 speedData[26]                : C25       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C26       :        :                   :         : 7         :                
+=======
+VGA_G[4]                     : C8        : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_G[7]                     : C9        : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C10       :        :                   :         : 8         :                
+VGA_B[2]                     : C11       : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_B[5]                     : C12       : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_vSync                    : C13       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 8         :                
+speedData[4]                 : C15       : output : 2.5 V             :         : 7         : N              
+debug_word[16]               : C16       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
+seg5[5]                      : C18       : output : 2.5 V             :         : 7         : N              
+lcd_rs                       : C19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 7         :                
+speedData[23]                : C22       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C23       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C24       :        :                   :         : 7         :                
+seg8[0]                      : C25       : output : 2.5 V             :         : 7         : N              
+seg6[1]                      : C26       : output : 2.5 V             :         : 7         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : C27       :        :                   :         : 6         :                
 GND                          : C28       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
@@ -380,6 +633,7 @@ lcd_data[5]                  : D4        : output : 2.5 V             :         
 speedData[24]                : D5        : output : 2.5 V             :         : 8         : N              
 speedData[27]                : D6        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8         :                
+<<<<<<< HEAD
 debug_data[0]                : D8        : output : 2.5 V             :         : 8         : N              
 RegWriteData[18]             : D9        : output : 2.5 V             :         : 8         : N              
 RegWriteData[29]             : D10       : output : 2.5 V             :         : 8         : N              
@@ -392,16 +646,39 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D18       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 7         :                
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 8         :                
+VGA_R[2]                     : D10       : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_B[6]                     : D11       : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_B[7]                     : D12       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 8         :                
+bulletYPosition[0]           : D15       : output : 2.5 V             :         : 7         : N              
+debug_word[17]               : D16       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D18       :        :                   :         : 7         :                
+leds[4]                      : D19       : output : 2.5 V             :         : 7         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7         :                
+speedData[25]                : D22       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D23       :        :                   :         : 7         :                
+<<<<<<< HEAD
 speedData[10]                : D24       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D25       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D27       :        :                   :         : 6         :                
 leds[0]                      : D28       : output : 2.5 V             :         : 6         : N              
 enemyBulletXPosition[5]      : E1        : output : 2.5 V             :         : 1         : N              
+=======
+seg2[1]                      : D24       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D25       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D26       :        :                   :         : 6         :                
+seg3[2]                      : D27       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D28       :        :                   :         : 6         :                
+seg8[1]                      : E1        : output : 2.5 V             :         : 1         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E2        : input  : 2.5 V             :         : 1         : N              
 enemyBulletYPosition[7]      : E3        : output : 2.5 V             :         : 1         : N              
 ps2_out[4]                   : E4        : input  : 2.5 V             :         : 8         : N              
@@ -411,6 +688,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
 VCCIO8                       : E9        : power  :                   : 2.5V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 8         :                
+<<<<<<< HEAD
 debug_data[1]                : E11       : output : 2.5 V             :         : 8         : N              
 RegWriteData[31]             : E12       : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : E13       : power  :                   : 2.5V    : 8         :                
@@ -432,6 +710,29 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E28       :        :                   :      
 bulletXPosition[0]           : F1        : output : 2.5 V             :         : 1         : N              
 bulletXPosition[7]           : F2        : output : 2.5 V             :         : 1         : N              
 bulletXPosition[3]           : F3        : output : 2.5 V             :         : 1         : N              
+=======
+VGA_R[1]                     : E11       : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_R[0]                     : E12       : output : 3.3-V LVTTL       :         : 8         : Y              
+VCCIO8                       : E13       : power  :                   : 3.3V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 8         :                
+debug_word[10]               : E15       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
+debug_word[24]               : E17       : output : 2.5 V             :         : 7         : N              
+bulletSpeed                  : E18       : output : 2.5 V             :         : 7         : Y              
+leds[2]                      : E19       : output : 2.5 V             :         : 7         : Y              
+VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 7         :                
+seg2[3]                      : E22       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
+left                         : E24       : output : 2.5 V             :         : 7         : Y              
+lcd_data[3]                  : E25       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E26       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E27       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E28       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1         :                
 GND                          : F6        : gnd    :                   :         :           :                
@@ -445,6 +746,7 @@ GND                          : F13       : gnd    :                   :         
 newSTATUS[22]                : F14       : output : 2.5 V             :         : 8         : N              
 testPC[4]                    : F15       : output : 2.5 V             :         : 7         : Y              
 GND                          : F16       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 newSTATUS[9]                 : F17       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 7         :                
@@ -461,11 +763,30 @@ enemyXPosition[3]            : G1        : output : 2.5 V             :         
 bulletYPosition[2]           : G2        : output : 2.5 V             :         : 1         : N              
 bulletXPosition[8]           : G3        : output : 2.5 V             :         : 1         : N              
 enemyBulletYPosition[2]      : G4        : output : 2.5 V             :         : 1         : N              
+=======
+processor_clock              : F17       : output : 2.5 V             :         : 7         : Y              
+bulletSpeed2                 : F18       : output : 2.5 V             :         : 7         : Y              
+leds[1]                      : F19       : output : 2.5 V             :         : 7         : Y              
+GND                          : F20       : gnd    :                   :         :           :                
+bulletSpeed3                 : F21       : output : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 7         :                
+GND                          : F23       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F24       :        :                   :         : 6         :                
+speedData[12]                : F25       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F26       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F27       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F28       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G4        :        :                   :         : 1         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G6        :        :                   :         : 1         :                
+seg5[1]                      : G6        : output : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 8         :                
+<<<<<<< HEAD
 STATUS[28]                   : G10       : output : 2.5 V             :         : 8         : N              
 enemyBulletYPosition[1]      : G11       : output : 2.5 V             :         : 8         : N              
 playerXPosition[0]           : G12       : output : 2.5 V             :         : 8         : N              
@@ -479,6 +800,21 @@ ps2_out[5]                   : G19       : input  : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : G20       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G21       :        :                   :         : 7         :                
 lcd_data[11]                 : G22       : output : 2.5 V             :         : 7         : N              
+=======
+VGA_R[4]                     : G10       : output : 3.3-V LVTTL       :         : 8         : Y              
+VGA_G[1]                     : G11       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G12       :        :                   :         : 8         :                
+VGA_hSync                    : G13       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 8         :                
+playerXPosition[4]           : G15       : output : 2.5 V             :         : 7         : N              
+outclock                     : G16       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 7         :                
+playerXPosition[3]           : G18       : output : 2.5 V             :         : 7         : N              
+leds[0]                      : G19       : output : 2.5 V             :         : 7         : Y              
+seg6[5]                      : G20       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G21       :        :                   :         : 7         :                
+gotShootSignal               : G22       : output : 2.5 V             :         : 7         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : G23       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G25       :        :                   :         : 6         :                
@@ -487,6 +823,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : G27       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : G28       :        :                   :         : 6         :                
 VCCIO1                       : H1        : power  :                   : 2.5V    : 1         :                
 GND                          : H2        : gnd    :                   :         :           :                
+<<<<<<< HEAD
 bulletYPosition[1]           : H3        : output : 2.5 V             :         : 1         : N              
 bulletYPosition[5]           : H4        : output : 2.5 V             :         : 1         : N              
 readingBulletY               : H5        : output : 2.5 V             :         : 1         : N              
@@ -508,6 +845,29 @@ GNDA2                        : H20       : gnd    :                   :         
 lcd_data[13]                 : H21       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H23       :        :                   :         : 6         :                
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : H3        :        :                   :         : 1         :                
+seg6[2]                      : H4        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H5        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
+VGA_R[6]                     : H8        : output : 3.3-V LVTTL       :         : 8         : Y              
+GNDA3                        : H9        : gnd    :                   :         :           :                
+VGA_R[7]                     : H10       : output : 3.3-V LVTTL       :         : 8         : Y              
+VCCIO8                       : H11       : power  :                   : 3.3V    : 8         :                
+VGA_G[3]                     : H12       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 8         :                
+debug_word[11]               : H15       : output : 2.5 V             :         : 7         : N              
+testPC[1]                    : H16       : output : 2.5 V             :         : 7         : Y              
+testPC[3]                    : H17       : output : 2.5 V             :         : 7         : Y              
+VCCIO7                       : H18       : power  :                   : 2.5V    : 7         :                
+shoot                        : H19       : output : 2.5 V             :         : 7         : Y              
+GNDA2                        : H20       : gnd    :                   :         :           :                
+leds[3]                      : H21       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
+seg4[3]                      : H23       : output : 2.5 V             :         : 6         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : H24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H26       :        :                   :         : 6         :                
@@ -515,11 +875,19 @@ GND                          : H27       : gnd    :                   :         
 VCCIO6                       : H28       : power  :                   : 2.5V    : 6         :                
 GND+                         : J1        :        :                   :         : 1         :                
 GND                          : J2        : gnd    :                   :         :           :                
+<<<<<<< HEAD
 readingEnemyBulletX          : J3        : output : 2.5 V             :         : 1         : N              
 bulletXPosition[6]           : J4        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[5]            : J5        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[4]            : J6        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[8]            : J7        : output : 2.5 V             :         : 1         : N              
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J5        :        :                   :         : 1         :                
+speedData[17]                : J6        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 VCCA3                        : J8        : power  :                   : 2.5V    :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
 speedData[16]                : J10       : output : 2.5 V             :         : 8         : N              
@@ -529,7 +897,11 @@ enemyBulletXPosition[9]      : J13       : output : 2.5 V             :         
 STATUS[0]                    : J14       : output : 2.5 V             :         : 8         : N              
 testPC[0]                    : J15       : output : 2.5 V             :         : 7         : Y              
 testPC[2]                    : J16       : output : 2.5 V             :         : 7         : Y              
+<<<<<<< HEAD
 STATUS[14]                   : J17       : output : 2.5 V             :         : 7         : N              
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : J17       :        :                   :         : 7         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : J18       : gnd    :                   :         :           :                
 shootData                    : J19       : output : 2.5 V             :         : 7         : Y              
 VCCD_PLL2                    : J20       : power  :                   : 1.2V    :           :                
@@ -539,12 +911,21 @@ ps2_out[1]                   : J23       : input  : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : J24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J26       :        :                   :         : 6         :                
+<<<<<<< HEAD
 inclock                      : J27       : input  : 2.5 V             :         : 6         : N              
 INreset                      : J28       : input  : 2.5 V             :         : 6         : N              
 enemyYPosition[2]            : K1        : output : 2.5 V             :         : 1         : N              
 enemyYPosition[1]            : K2        : output : 2.5 V             :         : 1         : N              
 RegWriteData[4]              : K3        : output : 2.5 V             :         : 1         : N              
 enemyYPosition[6]            : K4        : output : 2.5 V             :         : 1         : N              
+=======
+GND+                         : J27       :        :                   :         : 6         :                
+GND+                         : J28       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 VCCIO1                       : K5        : power  :                   : 2.5V    : 1         :                
 GND                          : K6        : gnd    :                   :         :           :                
 enemyYPosition[4]            : K7        : output : 2.5 V             :         : 1         : N              
@@ -566,6 +947,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K22       :        :                   :      
 GND                          : K23       : gnd    :                   :         :           :                
 VCCIO6                       : K24       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K25       :        :                   :         : 6         :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : K26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K28       :        :                   :         : 6         :                
@@ -577,6 +959,19 @@ enemyXPosition[1]            : L5        : output : 2.5 V             :         
 enemyXPosition[0]            : L6        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[6]            : L7        : output : 2.5 V             :         : 1         : N              
 bulletYPosition[4]           : L8        : output : 2.5 V             :         : 1         : N              
+=======
+seg4[5]                      : K26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K27       :        :                   :         : 6         :                
+speedData[11]                : K28       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 1         :                
+seg8[6]                      : L4        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L5        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : L9        : gnd    :                   :         :           :                
 VCCINT                       : L10       : power  :                   : 1.2V    :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -589,19 +984,34 @@ GND                          : L17       : gnd    :                   :         
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
 GND                          : L19       : gnd    :                   :         :           :                
 VCCINT                       : L20       : power  :                   : 1.2V    :           :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : L21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L23       :        :                   :         : 6         :                
+=======
+lcd_data[1]                  : L21       : output : 2.5 V             :         : 6         : N              
+seg2[2]                      : L22       : output : 2.5 V             :         : 6         : N              
+speedData[16]                : L23       : output : 2.5 V             :         : 6         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : L24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L27       :        :                   :         : 6         :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : L28       :        :                   :         : 6         :                
 enemyBulletXPosition[4]      : M1        : output : 2.5 V             :         : 1         : N              
 enemyYPosition[5]            : M2        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[7]            : M3        : output : 2.5 V             :         : 1         : N              
 bulletXPosition[4]           : M4        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[2]            : M5        : output : 2.5 V             :         : 1         : N              
+=======
+seg2[5]                      : L28       : output : 2.5 V             :         : 6         : N              
+playerXPosition[8]           : M1        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M2        :        :                   :         : 1         :                
+seg3[4]                      : M3        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 1         :                
+seg1[4]                      : M5        : output : 2.5 V             :         : 1         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 nSTATUS                      : M6        :        :                   :         : 1         :                
 enemyBulletXPosition[8]      : M7        : output : 2.5 V             :         : 1         : N              
 enemyBulletXPosition[1]      : M8        : output : 2.5 V             :         : 1         : N              
@@ -620,19 +1030,28 @@ GND                          : M20       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 6         :                
 MSEL2                        : M22       :        :                   :         : 6         :                
 start                        : M23       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M24       :        :                   :         : 6         :                
+RegWriteDSel[0]              : M24       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M28       :        :                   :         : 6         :                
 VCCIO1                       : N1        : power  :                   : 2.5V    : 1         :                
 GND                          : N2        : gnd    :                   :         :           :                
+<<<<<<< HEAD
 readingBulletX               : N3        : output : 2.5 V             :         : 1         : N              
 enemyXPosition[9]            : N4        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : N5        : power  :                   : 2.5V    : 1         :                
 GND                          : N6        : gnd    :                   :         :           :                
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 2.5 V             :         : 1         : N              
 enemyYPosition[8]            : N8        : output : 2.5 V             :         : 1         : N              
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 1         :                
+VCCIO1                       : N5        : power  :                   : 2.5V    : 1         :                
+GND                          : N6        : gnd    :                   :         :           :                
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 2.5 V             :         : 1         : N              
+playerXPosition[0]           : N8        : output : 2.5 V             :         : 1         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : N9        : gnd    :                   :         :           :                
 VCCINT                       : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
@@ -653,8 +1072,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : N25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : N26       :        :                   :         : 6         :                
 GND                          : N27       : gnd    :                   :         :           :                
 VCCIO6                       : N28       : power  :                   : 2.5V    : 6         :                
+<<<<<<< HEAD
 enemyYPosition[7]            : P1        : output : 2.5 V             :         : 1         : N              
 enemyYPosition[3]            : P2        : output : 2.5 V             :         : 1         : N              
+=======
+playerXPosition[6]           : P1        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 1         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 ~ALTERA_DCLK~                : P3        : output : 2.5 V             :         : 1         : N              
 nCONFIG                      : P4        :        :                   :         : 1         :                
 TCK                          : P5        : input  :                   :         : 1         :                
@@ -673,14 +1097,19 @@ VCCINT                       : P17       : power  :                   : 1.2V    
 GND                          : P18       : gnd    :                   :         :           :                
 VCCINT                       : P19       : power  :                   : 1.2V    :           :                
 GND                          : P20       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 speedData[4]                 : P21       : output : 2.5 V             :         : 5         : N              
+=======
+seg4[1]                      : P21       : output : 2.5 V             :         : 5         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 MSEL3                        : P22       :        :                   :         : 6         :                
 MSEL1                        : P23       :        :                   :         : 6         :                
 CONF_DONE                    : P24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P27       :        :                   :         : 6         :                
+seg6[6]                      : P27       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : P28       : output : 2.5 V             :         : 6         : N              
+<<<<<<< HEAD
 enemyBulletXPosition[6]      : R1        : output : 2.5 V             :         : 2         : N              
 RegWriteData[6]              : R2        : output : 2.5 V             :         : 2         : N              
 RegWriteData[2]              : R3        : output : 2.5 V             :         : 2         : N              
@@ -688,6 +1117,15 @@ readingPos                   : R4        : output : 2.5 V             :         
 playerYPosition[0]           : R5        : output : 2.5 V             :         : 2         : N              
 RegWriteData[7]              : R6        : output : 2.5 V             :         : 2         : N              
 RegWriteData[5]              : R7        : output : 2.5 V             :         : 2         : N              
+=======
+playerXPosition[2]           : R1        : output : 2.5 V             :         : 2         : N              
+playerXPosition[1]           : R2        : output : 2.5 V             :         : 2         : N              
+playerXPosition[7]           : R3        : output : 2.5 V             :         : 2         : N              
+bulletXPosition[9]           : R4        : output : 2.5 V             :         : 2         : N              
+bulletXPosition[8]           : R5        : output : 2.5 V             :         : 2         : N              
+bulletXPosition[5]           : R6        : output : 2.5 V             :         : 2         : N              
+playerXPosition[5]           : R7        : output : 2.5 V             :         : 2         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 nCE                          : R8        :        :                   :         : 1         :                
 GND                          : R9        : gnd    :                   :         :           :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
@@ -701,6 +1139,7 @@ GND                          : R17       : gnd    :                   :         
 VCCINT                       : R18       : power  :                   : 1.2V    :           :                
 GND                          : R19       : gnd    :                   :         :           :                
 VCCINT                       : R20       : power  :                   : 1.2V    :           :                
+<<<<<<< HEAD
 outclock                     : R21       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R22       :        :                   :         : 5         :                
 newSTATUS[26]                : R23       : output : 2.5 V             :         : 5         : N              
@@ -717,6 +1156,24 @@ VCCIO2                       : T5        : power  :                   : 2.5V    
 GND                          : T6        : gnd    :                   :         :           :                
 playerYPosition[8]           : T7        : output : 2.5 V             :         : 2         : N              
 playerXPosition[2]           : T8        : output : 2.5 V             :         : 2         : N              
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : R21       :        :                   :         : 5         :                
+debug_word[15]               : R22       : output : 2.5 V             :         : 5         : N              
+RegWriteDSel[2]              : R23       : output : 2.5 V             :         : 5         : N              
+RegWriteData[17]             : R24       : output : 2.5 V             :         : 5         : N              
+debug_word[22]               : R25       : output : 2.5 V             :         : 5         : N              
+lcd_data[0]                  : R26       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R27       :        :                   :         : 5         :                
+debug_word[20]               : R28       : output : 2.5 V             :         : 5         : N              
+VCCIO2                       : T1        : power  :                   : 2.5V    : 2         :                
+GND                          : T2        : gnd    :                   :         :           :                
+readingBulletX               : T3        : output : 2.5 V             :         : 2         : N              
+bulletXPosition[7]           : T4        : output : 2.5 V             :         : 2         : N              
+VCCIO2                       : T5        : power  :                   : 2.5V    : 2         :                
+GND                          : T6        : gnd    :                   :         :           :                
+debug_addr[9]                : T7        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 2         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 VCCINT                       : T9        : power  :                   : 1.2V    :           :                
 GND                          : T10       : gnd    :                   :         :           :                
 VCCINT                       : T11       : power  :                   : 1.2V    :           :                
@@ -729,6 +1186,7 @@ VCCINT                       : T17       : power  :                   : 1.2V    
 GND                          : T18       : gnd    :                   :         :           :                
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
 GND                          : T20       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 newSTATUS[14]                : T21       : output : 2.5 V             :         : 5         : N              
 newSTATUS[18]                : T22       : output : 2.5 V             :         : 5         : N              
 GND                          : T23       : gnd    :                   :         :           :                
@@ -745,6 +1203,24 @@ playerYPosition[4]           : U5        : output : 2.5 V             :         
 playerXPosition[4]           : U6        : output : 2.5 V             :         : 2         : N              
 newSTATUS[25]                : U7        : output : 2.5 V             :         : 2         : N              
 RegWriteData[16]             : U8        : output : 2.5 V             :         : 2         : N              
+=======
+speedData[2]                 : T21       : output : 2.5 V             :         : 5         : N              
+RegWriteDSel[1]              : T22       : output : 2.5 V             :         : 5         : N              
+GND                          : T23       : gnd    :                   :         :           :                
+VCCIO5                       : T24       : power  :                   : 2.5V    : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T25       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T26       :        :                   :         : 5         :                
+GND                          : T27       : gnd    :                   :         :           :                
+VCCIO5                       : T28       : power  :                   : 2.5V    : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :         : 2         :                
+bulletYPosition[7]           : U2        : output : 2.5 V             :         : 2         : N              
+bulletXPosition[0]           : U3        : output : 2.5 V             :         : 2         : N              
+bulletXPosition[2]           : U4        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 2         :                
+debug_word[12]               : U6        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 2         :                
+speedData[29]                : U8        : output : 2.5 V             :         : 2         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : U9        : gnd    :                   :         :           :                
 VCCINT                       : U10       : power  :                   : 1.2V    :           :                
 GND                          : U11       : gnd    :                   :         :           :                
@@ -759,10 +1235,15 @@ GND                          : U19       : gnd    :                   :         
 VCCINT                       : U20       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U21       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 5         :                
+<<<<<<< HEAD
 debug_data[9]                : U23       : output : 2.5 V             :         : 5         : N              
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : U23       :        :                   :         : 5         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : U24       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U25       :        :                   :         : 5         :                
+seg7[6]                      : U25       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U26       :        :                   :         : 5         :                
+<<<<<<< HEAD
 lcd_data[7]                  : U27       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U28       :        :                   :         : 5         :                
 playerYPosition[3]           : V1        : output : 2.5 V             :         : 2         : N              
@@ -773,6 +1254,18 @@ newSTATUS[1]                 : V5        : output : 2.5 V             :         
 playerXPosition[6]           : V6        : output : 2.5 V             :         : 2         : N              
 STATUS[18]                   : V7        : output : 2.5 V             :         : 2         : N              
 STATUS[25]                   : V8        : output : 2.5 V             :         : 2         : N              
+=======
+RESERVED_INPUT_WITH_WEAK_PULLUP : U27       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U28       :        :                   :         : 5         :                
+debug_addr[4]                : V1        : output : 2.5 V             :         : 2         : N              
+debug_addr[7]                : V2        : output : 2.5 V             :         : 2         : N              
+bulletYPosition[4]           : V3        : output : 2.5 V             :         : 2         : N              
+bulletYPosition[1]           : V4        : output : 2.5 V             :         : 2         : N              
+lcd_data[7]                  : V5        : output : 2.5 V             :         : 2         : N              
+speedData[18]                : V6        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V8        :        :                   :         : 2         :                
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 GND                          : V10       : gnd    :                   :         :           :                
 VCCINT                       : V11       : power  :                   : 1.2V    :           :                
@@ -785,6 +1278,7 @@ VCCINT                       : V17       : power  :                   : 1.2V    
 GND                          : V18       : gnd    :                   :         :           :                
 VCCINT                       : V19       : power  :                   : 1.2V    :           :                
 GND                          : V20       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : V21       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 5         :                
 debug_data[19]               : V23       : output : 2.5 V             :         : 5         : N              
@@ -801,6 +1295,24 @@ VCCIO2                       : W5        : power  :                   : 2.5V    
 GND                          : W6        : gnd    :                   :         :           :                
 STATUS[6]                    : W7        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 2         :                
+=======
+RegWriteData[21]             : V21       : output : 2.5 V             :         : 5         : N              
+lcd_data[6]                  : V22       : output : 2.5 V             :         : 5         : N              
+RegWriteData[16]             : V23       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V24       :        :                   :         : 5         :                
+RegWriteData[3]              : V25       : output : 2.5 V             :         : 5         : N              
+seg8[3]                      : V26       : output : 2.5 V             :         : 5         : N              
+RegWriteData[18]             : V27       : output : 2.5 V             :         : 5         : N              
+seg5[4]                      : V28       : output : 2.5 V             :         : 5         : N              
+debug_addr[3]                : W1        : output : 2.5 V             :         : 2         : N              
+debug_addr[10]               : W2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 2         :                
+VCCIO2                       : W5        : power  :                   : 2.5V    : 2         :                
+GND                          : W6        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W7        :        :                   :         : 2         :                
+speedData[1]                 : W8        : output : 2.5 V             :         : 2         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : W9        : gnd    :                   :         :           :                
 VCCINT                       : W10       : power  :                   : 1.2V    :           :                
 GND                          : W11       : gnd    :                   :         :           :                
@@ -814,14 +1326,19 @@ VCCINT                       : W18       : power  :                   : 1.2V    
 GND                          : W19       : gnd    :                   :         :           :                
 VCCINT                       : W20       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W21       :        :                   :         : 5         :                
+<<<<<<< HEAD
 lcd_data[20]                 : W22       : output : 2.5 V             :         : 5         : N              
+=======
+debug_word[9]                : W22       : output : 2.5 V             :         : 5         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 GND                          : W23       : gnd    :                   :         :           :                
 VCCIO5                       : W24       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W25       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W26       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W27       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W28       :        :                   :         : 5         :                
+RegWriteData[19]             : W25       : output : 2.5 V             :         : 5         : N              
+RegWriteData[15]             : W26       : output : 2.5 V             :         : 5         : N              
+RegWriteData[22]             : W27       : output : 2.5 V             :         : 5         : N              
+speedData[28]                : W28       : output : 2.5 V             :         : 5         : N              
 GND+                         : Y1        :        :                   :         : 2         :                
+<<<<<<< HEAD
 GND+                         : Y2        :        :                   :         : 2         :                
 playerYPosition[1]           : Y3        : output : 2.5 V             :         : 2         : N              
 playerXPosition[1]           : Y4        : output : 2.5 V             :         : 2         : N              
@@ -836,16 +1353,36 @@ debug_addr[4]                : Y12       : output : 2.5 V             :         
 debug_data[10]               : Y13       : output : 2.5 V             :         : 3         : N              
 debug_data[30]               : Y14       : output : 2.5 V             :         : 3         : N              
 debug_data[13]               : Y15       : output : 2.5 V             :         : 3         : N              
+=======
+master_clk                   : Y2        : input  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 2         :                
+VCCA1                        : Y8        : power  :                   : 2.5V    :           :                
+VCCD_PLL1                    : Y9        : power  :                   : 1.2V    :           :                
+seg7[4]                      : Y10       : output : 2.5 V             :         : 3         : N              
+GND                          : Y11       : gnd    :                   :         :           :                
+readingPos                   : Y12       : output : 2.5 V             :         : 3         : N              
+debug_word[5]                : Y13       : output : 2.5 V             :         : 3         : N              
+debug_word[6]                : Y14       : output : 2.5 V             :         : 3         : N              
+IRDA_RXD                     : Y15       : input  : 2.5 V             :         : 3         : Y              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
 GND                          : Y18       : gnd    :                   :         :           :                
 speedData[12]                : Y19       : output : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : Y20       : power  :                   : 1.2V    :           :                
 VCCA4                        : Y21       : power  :                   : 2.5V    :           :                
+<<<<<<< HEAD
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :         : 5         :                
+=======
+seg2[6]                      : Y22       : output : 2.5 V             :         : 5         : N              
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y23       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y24       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y25       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y26       :        :                   :         : 5         :                
+seg7[1]                      : Y25       : output : 2.5 V             :         : 5         : N              
+seg4[0]                      : Y26       : output : 2.5 V             :         : 5         : N              
 GND+                         : Y27       :        :                   :         : 5         :                
 GND+                         : Y28       :        :                   :         : 5         :                

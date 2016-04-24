@@ -1,13 +1,25 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Sun Apr 24 03:00:34 2016
+=======
+Analysis & Synthesis Status : Successful - Fri Apr 22 16:11:56 2016
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : Snake
 Top-level Entity Name : processor
 Family : Cyclone IV E
+<<<<<<< HEAD
 Total logic elements : 5,389
     Total combinational functions : 3,725
     Dedicated logic registers : 2,169
 Total registers : 2169
 Total pins : 322
+=======
+Total logic elements : 6,050
+    Total combinational functions : 4,322
+    Dedicated logic registers : 2,369
+Total registers : 2369
+Total pins : 268
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 Total virtual pins : 0
 Total memory bits : 262,144
 Embedded Multiplier 9-bit elements : 0
