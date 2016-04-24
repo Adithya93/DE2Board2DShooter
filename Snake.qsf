@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY processor
+set_global_assignment -name TOP_LEVEL_ENTITY skeletonRecovered
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:37:20  NOVEMBER 23, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
@@ -121,6 +121,10 @@ set_location_assignment PIN_H21 -to updateBulletSpeed2
 set_global_assignment -name VECTOR_WAVEFORM_FILE debugShootControl.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE debugShootControl2.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE EnemyShootTest.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE bexSetxTest.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testAsync.vwf
+set_global_assignment -name VERILOG_FILE VGAWrapperRecovered.v
+set_global_assignment -name VERILOG_FILE integrationRecovered.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -156,6 +160,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to master_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sync_n
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KB_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data
-set_global_assignment -name VECTOR_WAVEFORM_FILE bexSetxTest.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testAsync.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

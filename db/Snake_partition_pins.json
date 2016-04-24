@@ -4,131 +4,131 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "debug_data[0]",
+					"name" : "debug_word[0]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[1]",
+					"name" : "debug_word[1]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[2]",
+					"name" : "debug_word[2]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[3]",
+					"name" : "debug_word[3]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[4]",
+					"name" : "debug_word[4]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[5]",
+					"name" : "debug_word[5]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[6]",
+					"name" : "debug_word[6]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[7]",
+					"name" : "debug_word[7]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[8]",
+					"name" : "debug_word[8]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[9]",
+					"name" : "debug_word[9]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[10]",
+					"name" : "debug_word[10]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[11]",
+					"name" : "debug_word[11]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[12]",
+					"name" : "debug_word[12]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[13]",
+					"name" : "debug_word[13]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[14]",
+					"name" : "debug_word[14]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[15]",
+					"name" : "debug_word[15]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[16]",
+					"name" : "debug_word[16]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[17]",
+					"name" : "debug_word[17]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[18]",
+					"name" : "debug_word[18]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[19]",
+					"name" : "debug_word[19]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[20]",
+					"name" : "debug_word[20]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[21]",
+					"name" : "debug_word[21]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[22]",
+					"name" : "debug_word[22]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[23]",
+					"name" : "debug_word[23]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[24]",
+					"name" : "debug_word[24]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[25]",
+					"name" : "debug_word[25]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[26]",
+					"name" : "debug_word[26]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[27]",
+					"name" : "debug_word[27]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[28]",
+					"name" : "debug_word[28]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[29]",
+					"name" : "debug_word[29]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[30]",
+					"name" : "debug_word[30]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_data[31]",
+					"name" : "debug_word[31]",
 					"strict" : false
 				},
 				{
@@ -224,6 +224,118 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_R[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_hSync",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_vSync",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_clk",
+					"strict" : false
+				},
+				{
+					"name" : "blank_n",
+					"strict" : false
+				},
+				{
 					"name" : "playerXPosition[0]",
 					"strict" : false
 				},
@@ -261,42 +373,6 @@
 				},
 				{
 					"name" : "playerXPosition[9]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[0]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[1]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[2]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[3]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[4]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[5]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[6]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[7]",
-					"strict" : false
-				},
-				{
-					"name" : "playerYPosition[8]",
 					"strict" : false
 				},
 				{
@@ -373,82 +449,6 @@
 				},
 				{
 					"name" : "bulletYPosition[8]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[0]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[1]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[2]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[3]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[4]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[5]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[6]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[7]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[8]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyXPosition[9]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[0]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[1]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[2]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[3]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[4]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[5]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[6]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[7]",
-					"strict" : false
-				},
-				{
-					"name" : "enemyYPosition[8]",
 					"strict" : false
 				},
 				{
@@ -712,6 +712,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "processor_clock",
+					"strict" : false
+				},
+				{
 					"name" : "enemyBulletXPosition[0]",
 					"strict" : false
 				},
@@ -804,299 +808,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "newSTATUS[0]",
+					"name" : "resetn",
 					"strict" : false
 				},
 				{
-					"name" : "newSTATUS[1]",
+					"name" : "master_clk",
 					"strict" : false
 				},
 				{
-					"name" : "newSTATUS[2]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[3]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[4]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[5]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[6]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[7]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[8]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[9]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[10]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[11]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[12]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[13]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[14]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[15]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[16]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[17]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[18]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[19]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[20]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[21]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[22]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[23]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[24]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[25]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[26]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[27]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[28]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[29]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[30]",
-					"strict" : false
-				},
-				{
-					"name" : "newSTATUS[31]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[0]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[1]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[2]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[3]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[4]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[5]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[6]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[7]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[8]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[9]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[10]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[11]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[12]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[13]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[14]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[15]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[16]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[17]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[18]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[19]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[20]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[21]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[22]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[23]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[24]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[25]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[26]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[27]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[28]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[29]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[30]",
-					"strict" : false
-				},
-				{
-					"name" : "STATUS[31]",
-					"strict" : false
-				},
-				{
-					"name" : "writeStatus",
-					"strict" : false
-				},
-				{
-					"name" : "shouldBranch2",
-					"strict" : false
-				},
-				{
-					"name" : "inclock",
-					"strict" : false
-				},
-				{
-					"name" : "start",
-					"strict" : false
-				},
-				{
-					"name" : "timerInterrupt",
-					"strict" : false
-				},
-				{
-					"name" : "INreset",
-					"strict" : false
-				},
-				{
-					"name" : "shoot",
-					"strict" : false
-				},
-				{
-					"name" : "stop",
-					"strict" : false
-				},
-				{
-					"name" : "left",
-					"strict" : false
-				},
-				{
-					"name" : "right",
+					"name" : "IRDA_RXD",
 					"strict" : false
 				}
 			]

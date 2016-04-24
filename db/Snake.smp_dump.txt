@@ -1,5 +1,5 @@
 
-State Machine - |skeleton|VGAWrapperOld:testVGA|IR_RECEIVE:u1|state
+State Machine - |skeletonRecovered|VGAWrapperRecovered:testVGA|IR_RECEIVE:u1|state
 Name state.IDLE state.DATAREAD state.GUIDANCE 
 state.IDLE 0 0 0 
 state.GUIDANCE 1 0 1 

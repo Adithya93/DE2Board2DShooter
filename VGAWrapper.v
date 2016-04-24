@@ -153,7 +153,7 @@ module VGAWrapper(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VG
 
 endmodule
 
-
+/***
 module kbInput(data, direction, shoot, started);
 	//input KB_clk;//, data;
 	//input clock;
@@ -212,7 +212,7 @@ module kbInput(data, direction, shoot, started);
 			end
 	end		
 endmodule
-
+***/
 
 module inputFix(clock, resetn, newInput, finalOutput);
 	input newInput, clock, resetn;
