@@ -1,15 +1,39 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Sun Apr 24 16:14:57 2016
+=======
+<<<<<<< HEAD
+Fitter Status : Successful - Sun Apr 24 01:03:44 2016
+=======
+Fitter Status : Successful - Fri Apr 22 16:14:31 2016
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : Snake
 Top-level Entity Name : skeletonRecovered
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
+<<<<<<< HEAD
 Total logic elements : 4,829 / 114,480 ( 4 % )
     Total combinational functions : 4,399 / 114,480 ( 4 % )
     Dedicated logic registers : 2,380 / 114,480 ( 2 % )
 Total registers : 2380
 Total pins : 280 / 529 ( 53 % )
+=======
+<<<<<<< HEAD
+Total logic elements : 4,116 / 114,480 ( 4 % )
+    Total combinational functions : 3,728 / 114,480 ( 3 % )
+    Dedicated logic registers : 2,135 / 114,480 ( 2 % )
+Total registers : 2135
+Total pins : 321 / 529 ( 61 % )
+=======
+Total logic elements : 4,696 / 114,480 ( 4 % )
+    Total combinational functions : 4,324 / 114,480 ( 4 % )
+    Dedicated logic registers : 2,337 / 114,480 ( 2 % )
+Total registers : 2337
+Total pins : 268 / 529 ( 51 % )
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 Total virtual pins : 0
 Total memory bits : 262,144 / 3,981,312 ( 7 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )

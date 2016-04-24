@@ -4,6 +4,20 @@ Warning (10268): Verilog HDL information at Snake.v(212): always construct conta
 Warning (10268): Verilog HDL information at Snake.v(217): always construct contains both blocking and non-blocking assignments File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/Snake.v Line: 217
 Warning (10268): Verilog HDL information at Snake.v(219): always construct contains both blocking and non-blocking assignments File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/Snake.v Line: 219
 Info (10281): Verilog HDL Declaration information at Snake.v(30): object "update" differs only in case from object "UPDATE" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/Snake.v Line: 30
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Warning (10273): Verilog HDL warning at tryIntegrating.v(847): extended using "x" or "z" File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 847
+Warning (10273): Verilog HDL warning at tryIntegrating.v(2596): extended using "x" or "z" File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 2596
+Info (10281): Verilog HDL Declaration information at tryIntegrating.v(3538): object "y2" differs only in case from object "Y2" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 3538
+Info (10281): Verilog HDL Declaration information at tryIntegrating.v(3538): object "y1" differs only in case from object "Y1" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 3538
+=======
+Warning (10273): Verilog HDL warning at tryIntegrating.v(657): extended using "x" or "z" File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 657
+Warning (10273): Verilog HDL warning at tryIntegrating.v(2379): extended using "x" or "z" File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 2379
+Info (10281): Verilog HDL Declaration information at tryIntegrating.v(3321): object "y2" differs only in case from object "Y2" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 3321
+Info (10281): Verilog HDL Declaration information at tryIntegrating.v(3321): object "y1" differs only in case from object "Y1" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/tryIntegrating.v Line: 3321
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 Info (10281): Verilog HDL Declaration information at VGAWrapper.v(42): object "update" differs only in case from object "UPDATE" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/VGAWrapper.v Line: 42
 Info (10281): Verilog HDL Declaration information at VGAWrapperOld.v(42): object "update" differs only in case from object "UPDATE" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/VGAWrapperOld.v Line: 42
 Info (10281): Verilog HDL Declaration information at VGAWrapperRecovered.v(42): object "update" differs only in case from object "UPDATE" in the same scope File: C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/VGAWrapperRecovered.v Line: 42

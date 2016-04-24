@@ -1,6 +1,10 @@
 module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word, debug_addr, 
 					leds, lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon, 	
+<<<<<<< HEAD
 					seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8, outclock, readingPos, testPC, start, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, DAC_clk, blank_n, playerXPosition, bulletXPosition, bulletYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, newSTATUS, STATUS, writeStatus, branchException);
+=======
+					seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8, outclock, readingPos, testPC, start, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, DAC_clk, blank_n, playerXPosition, bulletXPosition, bulletYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY, processor_clock, gotShootSignal, left, right, stop, shoot, bulletSpeed, bulletSpeed2, bulletSpeed3);
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 
 	//input 			inclock, resetn;
 	input resetn;
@@ -28,11 +32,10 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	// PROJECT : FOR TESTING OF INPUT (MAY BE EVENTUALLY REPLACED BY KEYBOARD AND PS2CONTROLLER)
 	
 	//input left, right, stop, shoot;
-	wire left, right, stop, shoot;
-	//output left, right, stop, shoot;
+	//wire left, right, stop, shoot;
+	output left, right, stop, shoot;
 	
-	//input start;
-	output start;
+	input start;
 	input IRDA_RXD;
 
 	//input left2, right2, up, down;
@@ -45,12 +48,13 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	output [9:0] playerXPosition, bulletXPosition;
 	output [8:0] bulletYPosition;
 	output [31:0] RegWriteData;
-	//output [2:0] RegWriteDSel;
+	output [2:0] RegWriteDSel;
 	output [31:0] speedData;
 	output shootData;
 	output readingBulletX, readingBulletY;
 	//output processor_clock;
 	
+<<<<<<< HEAD
 	output [9:0] enemyBulletXPosition;
 	output [8:0] enemyBulletYPosition;
 	output readingEnemyBulletX, readingEnemyBulletY;
@@ -60,39 +64,11 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	output [31:0] newSTATUS, STATUS;
 	output writeStatus, branchException;
 	/***
+=======
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	output gotShootSignal;
 	
 	output bulletSpeed, bulletSpeed2, bulletSpeed3;
-	
-	output sanityCheck;
-	
-	output sanityCheck2;
-	
-	output regFileInput;
-	
-	output updateBulletSpeed;
-	output checkSel;
-	output checkSel2;
-	output updateBulletSpeed2;
-	output [1:0] RegWriteDSel;
-	output [31:0] allOtherData;
-	***/
-	
-	/***
-	
-	output lessThan, shouldBranch;
-	
-	output [31:0] ALUInput1, ALUInput2, ALUOutput;
-	
-	output [31:0] RS2Val, chosenALUInB; 
-	output [1:0] ALUIn2Bypass;
-	output [4:0] RS2;
-	output [4:0] RD;
-	output RegWE;
-	output [4:0] MWOp;
-	output multRDY;
-	***/
-	
 	
 	output [7:0] VGA_R, VGA_G, VGA_B;  //Red, Green, Blue VGA signals
 	output VGA_hSync, VGA_vSync, DAC_clk, blank_n; //Horizontal and Vertical sync signals
@@ -120,11 +96,15 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	//assign inclock = master_clk;
 	//wire processor_clock;
 	//processor myprocessor(inclock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY);
+<<<<<<< HEAD
 	wire timerInterrupt;
 	wire processor_clock;
 	assign processor_clock = master_clk;
 	
 	processor myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, timerInterrupt, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, newSTATUS, STATUS, writeStatus, branchException);
+=======
+	processor myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY, gotShootSignal, bulletSpeed, bulletSpeed2, bulletSpeed3);
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 
 	
 	// keyboard controller
@@ -156,16 +136,22 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	wire [9:0] playerXPosition, enemyXPosition, bulletXPosition;
 	wire [8:0] playerYPosition, enemyYPosition, bulletYPosition;
 	
-	wire [9:0] enemyBulletXPosition;
-	wire [8:0] enemyBulletYPosition;
 //	VGAWrapper testVGA(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, update_clock);
 // VGAWrapper(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition);	
 //	VGAWrapper testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, left, right, stop, shoot);
+<<<<<<< HEAD
 	VGAWrapperOld testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, timerInterrupt, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
 	
 endmodule
 
 module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, timerInterrupt, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, newSTATUS, STATUS, writeStatus, shouldBranch2);
+=======
+	VGAWrapperOld testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, left, right, stop, shoot);
+	
+endmodule
+
+module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY, gotShootSignal, bulletSpeed, bulletSpeed2, bulletSpeed3);
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 
 	input 			inclock, INreset, ps2_key_pressed;
 	input 	[7:0]	ps2_out;
@@ -178,9 +164,10 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	output	[11:0]	debug_addr;
 	
 	// FOR PROJECT - I/O TESTING
-	input start, left, right, stop, shoot;
+	input left, right, stop, shoot;
 	output [7:0] leds;
 	
+<<<<<<< HEAD
 	output win, lose;
 	
 	input timerInterrupt;
@@ -193,11 +180,12 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	myDFFE setGoodOutcome(~RegWriteData[31], clock, reset, writingEndState, win);
 	
 	myDFFE setBadOutcome(RegWriteData[31], clock, reset, writingEndState, lose);
+=======
+
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	
 	// DEBUG
 	output [31:0] RegWriteData;
-	/***
-	
 
 	output gotShootSignal;
 	
@@ -207,6 +195,7 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	output bulletSpeed;
 	output bulletSpeed2;
 	output bulletSpeed3;
+<<<<<<< HEAD
 	output regFileInput;
 	output sanityCheck;
 	output sanityCheck2;
@@ -256,15 +245,26 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	/***
 	//wire updateBulletSpeed;
 	//wire updateBulletSpeed2;
+=======
+	
+	
+	wire updateBulletSpeed;
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	
 	//assign updateBulletSpeed = (MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & MWIns[27]);
 	
+<<<<<<< HEAD
 	//myDFFE latchBulletUpdate(updateBulletSpeed, clock, reset, 1'b1, updateBulletSpeed2);
 	
 	//myDFFE latchBulletSpeed(RegWriteData[0], clock, reset, updateBulletSpeed, bulletSpeed);
 
 	
 	//myDFFE latchBulletSpeed2(RegWriteData[0], clock, reset, updateBulletSpeed | updateBulletSpeed2, bulletSpeed2);
+=======
+	myDFFE latchBulletSpeed(RegWriteData, clock, reset, updateBulletSpeed, bulletSpeed);
+
+	myDFFE latchBulletSpeed2(RegWriteData, ~clock, reset, updateBulletSpeed, bulletSpeed2);
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	
 	//myDFFE latchBulletSpeed3(bulletSpeed2, clock, reset, bulletSpeed2, bulletSpeed3);
 	***/
@@ -280,7 +280,6 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	//output [31:0] toVGA;
 	wire [31:0] playerXCoords, playerYCoords, bulletXCoords, bulletYCoords, enemyXCoords, enemyYCoords;
 	
-	wire [31:0] enemyBulletXCoords, enemyBulletYCoords;
 	// TO BE ASSIGNED
 	
 	//wire readingBulletX, readingBulletY,
@@ -288,13 +287,9 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	wire readingEnemyX, readingEnemyY;
 	output readingBulletX, readingBulletY;
 	
-	output readingEnemyBulletX, readingEnemyBulletY;
-	
 	//assign toVGA = 
 	output [9:0] playerXPosition, bulletXPosition, enemyXPosition;
 	output [8:0] playerYPosition, bulletYPosition, enemyYPosition;
-	output [9:0] enemyBulletXPosition;
-	output [8:0] enemyBulletYPosition;
 
 		// TRY SWITCHING TO NEG CLOCK
 		// WHEN THAT FAILS, TRY WIRING MWALUOUTPUT INSTEAD OF REGWRITEDATA
@@ -309,8 +304,6 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	Register32 enemyYReg(~clock, readingEnemyY, RegWriteData, reset, enemyYCoords);
 	//Register32 enemyYReg(clock, readingEnemyY, RS1Val, reset, enemyYCoords);
 	
-	Register32 enemyBulletXReg(~clock, readingEnemyBulletX, RegWriteData, reset, enemyBulletXCoords);
-	Register32 enemyBulletYReg(~clock, readingEnemyBulletY, RegWriteData, reset, enemyBulletYCoords);
 	
 	//assign enemyYCoords = 32'd550;// TEMP
 	
@@ -324,9 +317,6 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	assign bulletYPosition = bulletYCoords[8:0];
 	assign enemyXPosition = enemyXCoords[9:0];
 	assign enemyYPosition = enemyYCoords[8:0];
-	
-	assign enemyBulletXPosition = enemyBulletXCoords[9:0];
-	assign enemyBulletYPosition = enemyBulletYCoords[8:0];
 	
 	// DEBUG ONLY - remember to change to wire
 	output outclock, readingPos;
@@ -395,16 +385,24 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	// wire RegWE;
 	wire [1:0] nextPCSel;
 
+<<<<<<< HEAD
 	wire [2:0] RegWriteDSel;
 	 //output [2:0] RegWriteDSel;
+=======
+	 //wire [2:0] RegWriteDSel;
+	 output [2:0] RegWriteDSel;
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	 
 	//output [2:0] RegWriteDSel;
 	
 	//assign sxImm[31:17] = inst[16] ? {15{1'b1}} : {15{1'b0}};
 	//assign sxImm[16:0] = inst[16:0];
-	wire ioInterrupt;
 	
+<<<<<<< HEAD
 	control insnDecoder(clock, reset, FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpBSel, memWE, RS2Sel, RD, ALUOpcode, RegWriteDSel, nextPCSel, BNE, BLT, BEX, writeStatus, newSTATUS, hasPrediction, ioInterrupt, timerInterrupt);
+=======
+	control insnDecoder(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpBSel, memWE, RS2Sel, RD, ALUOpcode, RegWriteDSel, nextPCSel, BNE, BLT, BEX, writeStatus, newSTATUS, hasPrediction);
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	
 	// adder for Absolute Address from Relative Address and branch-related hardware
 	wire [31:0] sxAbsBranchAddr;
@@ -412,10 +410,6 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	wire [31:0] absBranchAddr;
 	wire branchAddrOverflow;
 	wire shouldBranch0, shouldBranch1, shouldBranch2, shouldBranch;
-	
-	// DEBUG ONLY
-	//output shouldBranch;
-	
 	//wire STATUS;
 	//wire [11:0] branchOrNext;
 	//wire [31:0] branchOrNext;
@@ -469,6 +463,7 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	
 	//fourOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, RegWriteDSel, RegWriteData);
 	// MODIFY RegWriteDSelector to be 8-1 MUX capable of accepting data from inputControl
+<<<<<<< HEAD
 	
 	//eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, RegWriteData);
 	// CHANGE TO WIRE SPEED DIRECTLY INTO 2-1 MUX WITH
@@ -494,6 +489,9 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	
 	
 	
+=======
+	eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, RegWriteData);
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	
 	//fourOneMux12 nextPCSelector(branchOrNext, normalJump, jr, branchOrNext, nextPCSel, nextImemAddr);
 	
@@ -611,9 +609,6 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	
 	wire ALUoverflow;
 	wire notEqual;
-	//wire lessThan;
-	// DEBUG ONLY, must change
-	//output lessThan;
 	wire lessThan;
 	
 	wire [31:0] sxDXImm;
@@ -670,6 +665,7 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, XMALUOutput, ALUIn1Bypass, usualALUInA);
 	
 	//fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, chosenALUInB, ALUIn2Bypass, ALUInputB);
+<<<<<<< HEAD
 	
 	fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, XMALUOutput, ALUIn2Bypass, usualALUInB);
 
@@ -683,6 +679,10 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	//assign ALUInput1 = ALUInputA;
 	//assign ALUInput2 = ALUInputB;
 	
+=======
+	fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, XMALUOutput, ALUIn2Bypass, ALUInputB);
+		
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	//assign ALUOpcode = DXIns[6:2];
 	assign ALUShiftAmt = DXIns[11:7];
 	ALU myALU(ALUInputA, ALUInputB, ALUOpcode, ALUShiftAmt, ALUOutput, notEqual, lessThan, ALUoverflow);
@@ -751,7 +751,7 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	assign resetSpeed = ~(MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]); // Reset speed one cycle after it has been read
 	assign resetShoot = ~(MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & MWIns[27]); // Reset shoot one cycle after it has been read
 	
-	inputController userInput(clock, reset, start, left, right, shoot, stop, speedData, shootData, resetSpeed, resetShoot, ioInterrupt);
+	inputController userInput(clock, reset, left, right, shoot, stop, speedData, shootData, resetSpeed, resetShoot);
 	
 	// FOR TESTING INPUT 
 	
@@ -772,10 +772,6 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	assign readingEnemyX = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & ~MWIns[24] & MWIns[23] & MWIns[22]); // RD of 11
 	//assign readingEnemyY = 1'b0; // TO DO!
 	assign readingEnemyY = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & ~MWIns[23] & MWIns[22]);// RD of 13
-	
-	
-	assign readingEnemyBulletX = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & MWIns[23] & ~MWIns[22]); // RD of 14
-	assign readingEnemyBulletY = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & MWIns[23] & MWIns[22]); // RD of 15
 	
 	myDFFE latchPos0(RS1Val[0], clock, reset, readingPos, leds[5]);
 	myDFFE latchPos1(RS1Val[1], clock, reset, readingPos, leds[6]);
@@ -1238,7 +1234,11 @@ module bypassControl(DXIns, XMIns, MWIns, ALUIn1Bypass, ALUIn2Bypass, MemDataByp
 	
 endmodule
 
+<<<<<<< HEAD
 module control(clock, reset, FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpB, memWE, RS2Sel, RD, ALUOpcode, RegWriteD, nextPC, BNE, BLT, BEX, statusEnable, finalSTATUS, hasPrediction, must_update, timerInterrupt); // isBranch
+=======
+module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpB, memWE, RS2Sel, RD, ALUOpcode, RegWriteD, nextPC, BNE, BLT, BEX, statusEnable, newSTATUS, hasPrediction, must_update); // isBranch
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	input [31:0] MWIns;
 	//input [4:0] FDopcode, DXopcode, XMopcode;
 	input [31:0] FDIns, DXIns, XMIns;
@@ -1263,11 +1263,10 @@ module control(clock, reset, FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multD
 	assign catchTimerInterrupt = newTimerInterrupt ^ oldTimerInterrupt ? timerInterrupt : 1'b0;
 	
 	output statusEnable; // Modify to allow clockAdapter to write to it
-	//output [31:0] newSTATUS, hasPrediction; // newSTATUS will be 32'd1 if must_update
-	output [31:0] finalSTATUS, hasPrediction; // newSTATUS will be 32'd1 if must_update
+	output [31:0] newSTATUS, hasPrediction; // newSTATUS will be 32'd1 if must_update
+	
 	input must_update;
 	
-	wire [31:0] newSTATUS;
 	
 	wire [4:0] FDopcode, DXopcode, XMopcode;
 	assign FDopcode = FDIns[31:27];
@@ -1313,10 +1312,7 @@ module control(clock, reset, FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multD
 	//assign RegWriteD[1] = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & ~MWopcode[1] & ~MWopcode[0]) & (~MWALUOpcode[4] & ~MWALUOpcode[3] & MWALUOpcode[2] & MWALUOpcode[1]);
 	// As long as the writeback register of multDiv is not all zeros, should choose its output
 	//assign RegWriteD[1] = (multDivIns[31] | multDivIns[30] | multDivIns[29] | multDivIns[28] | multDivIns[27]) | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
-	
-	//assign RegWriteD[1] = multDivResultRDY | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
-	assign RegWriteD[1] = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
-	
+	assign RegWriteD[1] = multDivResultRDY | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
 	// FOR PROJECT : 1xx : choose value from inputControl, for getSpeed (11000) and getShoot(11001) instructions
 	assign RegWriteD[2] = (MWopcode[4] & MWopcode[3] & ~MWopcode[2] & ~MWopcode[1]);
 	
@@ -1357,6 +1353,7 @@ module control(clock, reset, FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multD
 	assign multDivStatus[31:1] = {30{1'b0}};
 	assign multDivStatus[0] = multDivException;
 	
+<<<<<<< HEAD
 	wire [31:0] ioINTERRUPT;
 	assign ioINTERRUPT = {32{1'b1}};
 	//assign statusEnable = settingX | multDivException;
@@ -1370,6 +1367,11 @@ module control(clock, reset, FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multD
 	assign statusEnable = settingX | multDivException | must_update | catchTimerInterrupt;
 	assign newSTATUS = settingX ? setXStatus : multDivStatus;	// If setX and multDiv try to write status at same time, priority given to setX since it is most recent
 	assign finalSTATUS = (must_update | catchTimerInterrupt) ? ioINTERRUPT : newSTATUS; // HIGHEST PRIORITY TO HARDWARE INTERRUPTS!
+=======
+	assign statusEnable = settingX | multDivException;
+	assign newSTATUS = settingX ? setXStatus : multDivStatus;	// If setX and multDiv try to write status at same time, priority given to setX since it is most recent
+
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	// If FDOpcode is Branch, then hasPrediction
 	assign hasPrediction = (~FDopcode[4] & ~FDopcode[3] & FDopcode[1] & ~FDopcode[0]) | (FDopcode[4] & ~FDopcode[3] & FDopcode[2] & FDopcode[1] & ~FDopcode[0]);
 		
@@ -3624,15 +3626,14 @@ endmodule
 
 
 
-module inputController(clock, reset, start, inleft, inright, inshoot, instop, speedData, shootData, resetSpeedNextNext, resetShootNextNext, ioInterrupt); // modify such that reading of speed/shoot resets it
+module inputController(clock, reset, inleft, inright, inshoot, instop, speedData, shootData, resetSpeedNext, resetShootNext); // modify such that reading of speed/shoot resets it
 	input clock, reset;
 	input inleft, inright, inshoot, instop; // active-high pulses from push-buttons
 	output [31:0] speedData; // will latch last value until stop is pressed
 	output shootData; // will be a 1 from press of shoot till press of stop
-	output ioInterrupt;
+	
 	//input start;
-	//input resetSpeedNext, resetShootNext;
-	input resetSpeedNextNext, resetShootNextNext;
+	input resetSpeedNext, resetShootNext;
 	
 	input start;
 	wire left, right, stop, shoot;
@@ -3666,16 +3667,15 @@ module inputController(clock, reset, start, inleft, inright, inshoot, instop, sp
 	
 	assign nextShot = shoot ? 1'b1 : 1'b0;
 	
-	wire resetSpeedNext, resetShootNext;
 	wire resetSpeed, resetShoot;
 	
+<<<<<<< HEAD
 	wire oldInterrupt, newInterrupt;
 	
+=======
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 	//myDFFE resetNextSpeed0(resetSpeedNext, ~clock, reset, 1'b1, resetSpeed0);
 	//myDFFE resetNextShoot0(resetShootNext, ~clock, reset, 1'b1, resetShoot0);
-	myDFFE resetNextNextSpeed(resetSpeedNextNext, ~clock, reset, 1'b1, resetSpeedNext);
-	myDFFE resetNextNextShoot(resetShootNextNext, ~clock, reset, 1'b1, resetShootNext);
-	
 	myDFFE resetNextSpeed(resetSpeedNext, ~clock, reset, 1'b1, resetSpeed);
 	myDFFE resetNextShoot(resetShootNext, ~clock, reset, 1'b1, resetShoot);
 	
@@ -3685,11 +3685,16 @@ module inputController(clock, reset, start, inleft, inright, inshoot, instop, sp
 	Register32 latchButton(clock, speedWriteEnable, nextSpeed, reset & resetSpeed, speedData);
 		
 	// Use counter to latch shoot signal for number of cycles equal to instructions in loop 
+<<<<<<< HEAD
 	// TRY TOGGLING CLOCK
 	myDFFE latchShot(nextShot, clock, reset & resetShoot, shootWriteEnable, shootData);
 	myDFFE latchNewInterrupt(start, clock, reset, 1'b1, newInterrupt);
 	myDFFE latchOldInterrupt(newInterrupt, clock, reset, 1'b1, oldInterrupt);
 	assign ioInterrupt = (oldInterrupt ^ newInterrupt) ? start : 1'b0;
+=======
+	myDFFE latchShot(nextShot, ~clock, reset & resetShoot, shootWriteEnable, shootData);
+	
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 endmodule
 
 

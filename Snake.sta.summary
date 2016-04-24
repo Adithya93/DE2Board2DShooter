@@ -2,9 +2,16 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+<<<<<<< HEAD
 Type  : Slow 1200mV 85C Model Setup 'VGAWrapperRecovered:testVGA|processorClk:getProcessorClock|processor_clock'
 Slack : -32.584
 TNS   : -41204.347
+=======
+<<<<<<< HEAD
+Type  : Slow 1200mV 85C Model Setup 'inclock'
+Slack : -34.667
+TNS   : -44635.583
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 
 Type  : Slow 1200mV 85C Model Setup 'VGAWrapperRecovered:testVGA|clk_reduce:reduce1|VGA_clk'
 Slack : -4.691
@@ -38,13 +45,63 @@ Type  : Slow 1200mV 85C Model Recovery 'VGAWrapperRecovered:testVGA|processorClk
 Slack : -2.736
 TNS   : -322.229
 
+<<<<<<< HEAD
 Type  : Slow 1200mV 85C Model Removal 'VGAWrapperRecovered:testVGA|processorClk:getProcessorClock|processor_clock'
 Slack : 1.381
+=======
+Type  : Slow 1200mV 85C Model Removal 'inclock'
+Slack : 1.071
+=======
+Type  : Slow 1200mV 85C Model Setup 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -38.700
+TNS   : -51232.602
+
+Type  : Slow 1200mV 85C Model Setup 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -4.933
+TNS   : -151.736
+
+Type  : Slow 1200mV 85C Model Setup 'master_clk'
+Slack : -3.930
+TNS   : -258.634
+
+Type  : Slow 1200mV 85C Model Setup 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : -1.269
+TNS   : -47.727
+
+Type  : Slow 1200mV 85C Model Hold 'master_clk'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : 0.606
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : 0.838
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.883
+TNS   : -326.192
+
+Type  : Slow 1200mV 85C Model Removal 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 1.274
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'master_clk'
 Slack : -3.000
+<<<<<<< HEAD
 TNS   : -179.045
+=======
+<<<<<<< HEAD
+TNS   : -3005.003
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapperRecovered:testVGA|processorClk:getProcessorClock|processor_clock'
 Slack : -2.693
@@ -94,12 +151,72 @@ Type  : Slow 1200mV 0C Model Recovery 'VGAWrapperRecovered:testVGA|processorClk:
 Slack : -2.393
 TNS   : -276.397
 
+<<<<<<< HEAD
 Type  : Slow 1200mV 0C Model Removal 'VGAWrapperRecovered:testVGA|processorClk:getProcessorClock|processor_clock'
 Slack : 1.272
+=======
+Type  : Slow 1200mV 0C Model Removal 'inclock'
+Slack : 0.998
+=======
+TNS   : -179.045
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.693
+TNS   : -2941.608
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : -1.285
+TNS   : -73.245
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.285
+TNS   : -70.675
+
+Type  : Slow 1200mV 0C Model Setup 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -35.572
+TNS   : -47115.927
+
+Type  : Slow 1200mV 0C Model Setup 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -4.442
+TNS   : -133.152
+
+Type  : Slow 1200mV 0C Model Setup 'master_clk'
+Slack : -3.538
+TNS   : -221.259
+
+Type  : Slow 1200mV 0C Model Setup 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : -1.067
+TNS   : -38.302
+
+Type  : Slow 1200mV 0C Model Hold 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.336
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'master_clk'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : 0.546
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : 0.772
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.553
+TNS   : -279.232
+
+Type  : Slow 1200mV 0C Model Removal 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 1.143
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'master_clk'
 Slack : -3.000
+<<<<<<< HEAD
 TNS   : -179.045
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapperRecovered:testVGA|processorClk:getProcessorClock|processor_clock'
@@ -125,6 +242,10 @@ TNS   : -48.749
 Type  : Fast 1200mV 0C Model Setup 'master_clk'
 Slack : -1.428
 TNS   : -57.117
+=======
+<<<<<<< HEAD
+TNS   : -3000.779
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 
 Type  : Fast 1200mV 0C Model Setup 'VGAWrapperRecovered:testVGA|updateClk:UPDATE|update'
 Slack : -0.091
@@ -156,6 +277,7 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'master_clk'
 Slack : -3.000
+<<<<<<< HEAD
 TNS   : -179.823
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapperRecovered:testVGA|processorClk:getProcessorClock|processor_clock'
@@ -169,5 +291,79 @@ TNS   : -76.000
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapperRecovered:testVGA|clk_reduce:reduce1|VGA_clk'
 Slack : -1.000
 TNS   : -56.000
+=======
+TNS   : -2394.958
+=======
+TNS   : -179.045
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.649
+TNS   : -2937.384
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : -1.285
+TNS   : -73.245
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.285
+TNS   : -70.675
+
+Type  : Fast 1200mV 0C Model Setup 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -19.110
+TNS   : -25786.355
+
+Type  : Fast 1200mV 0C Model Setup 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.965
+TNS   : -50.457
+
+Type  : Fast 1200mV 0C Model Setup 'master_clk'
+Slack : -1.423
+TNS   : -59.374
+
+Type  : Fast 1200mV 0C Model Setup 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : -0.446
+TNS   : -13.764
+
+Type  : Fast 1200mV 0C Model Hold 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.118
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'master_clk'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : 0.279
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : 0.730
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -0.987
+TNS   : -117.389
+
+Type  : Fast 1200mV 0C Model Removal 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.611
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'master_clk'
+Slack : -3.000
+TNS   : -179.689
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -1.000
+TNS   : -2184.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|updateClk:UPDATE|update'
+Slack : -1.000
+TNS   : -57.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapperOld:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.000
+TNS   : -55.000
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 
 ------------------------------------------------------------

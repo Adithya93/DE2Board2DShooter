@@ -83,6 +83,7 @@ set_global_assignment -name VERILOG_FILE "../ECE 2220 Project/Snake.v"
 set_location_assignment PIN_M23 -to start
 set_global_assignment -name VERILOG_FILE simpleCount.v
 set_global_assignment -name VERILOG_FILE tryIntegrating.v
+<<<<<<< HEAD
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_AB23 -to resetn
@@ -128,6 +129,8 @@ set_global_assignment -name VERILOG_FILE integrationRecovered.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+=======
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DAC_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6]
@@ -160,4 +163,48 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to master_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sync_n
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KB_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+set_global_assignment -name VECTOR_WAVEFORM_FILE bexSetxTest.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testAsync.vwf
+=======
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_AB23 -to resetn
+set_global_assignment -name VECTOR_WAVEFORM_FILE simpleIntegrationTest.vwf
+set_location_assignment PIN_J16 -to testPC[2]
+set_location_assignment PIN_H16 -to testPC[1]
+set_location_assignment PIN_J15 -to testPC[0]
+set_location_assignment PIN_E21 -to toVGA[0]
+set_location_assignment PIN_E22 -to toVGA[1]
+set_location_assignment PIN_E25 -to toVGA[2]
+set_location_assignment PIN_E19 -to leds[2]
+set_location_assignment PIN_F19 -to leds[1]
+set_location_assignment PIN_G19 -to leds[0]
+set_global_assignment -name VERILOG_FILE clockAdapter.v
+set_global_assignment -name VERILOG_FILE VGAWrapper.v
+set_global_assignment -name VERILOG_FILE IR_RECEIVER.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE moveNShootLoopTest.vwf
+set_location_assignment PIN_Y15 -to IRDA_RXD
+set_location_assignment PIN_H17 -to testPC[3]
+set_location_assignment PIN_F15 -to testPC[4]
+set_global_assignment -name VECTOR_WAVEFORM_FILE integrationTestBasic.vwf
+set_location_assignment PIN_F17 -to processor_clock
+set_global_assignment -name VERILOG_FILE VGAWrapperOld.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE inputFixTest.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE InputGenerationTest.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE shootNLeftDebug.vwf
+set_location_assignment PIN_E24 -to left
+set_global_assignment -name VECTOR_WAVEFORM_FILE testFixInput2.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_H19 -to shoot
+set_location_assignment PIN_J19 -to shootData
+set_location_assignment PIN_E18 -to bulletSpeed
+set_location_assignment PIN_F18 -to bulletSpeed2
+set_location_assignment PIN_F21 -to bulletSpeed3
+>>>>>>> parent of 89fcaae... Complete implementation of enemy shooting and win/lose splash screens, about to modify clocking with use of bex/setx
+>>>>>>> 801071e4a0dfcfc316d127ec95bfa976da2040ac
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -24,9 +24,6 @@ blt $r4, $r13, resetBullet
 continue2:
 blt $r4, $r21, moveBullet
 
-hideBullet:
-add $r3, $r1, $r0
-
 next:
 jal moveEnemy
 
@@ -44,6 +41,8 @@ checkEnemyCollisionX2:
 addi $r23, $r11, 20 
 blt $r3, $r23, killEnemy
 j movePlayer
+
+
 
 movePlayer:
 add $r1, $r1, $r2
@@ -72,7 +71,7 @@ j continue2
 
 
 spawnEnemy:
-sra $r23, $r22, 1 
+sra $r23, $r22, 2 
 sub $r24, $r23, $r1 
 add $r11, $r23, $r24 
 addi $r13, $r0, 40 
@@ -92,12 +91,11 @@ jr $ra
 
 
 checkIfMovingRight:
-blt $r0, $r12, reverse
-j incr
+blt $r12, $r0, incr
+j reverse
 
 checkIfMovingLeft:
-blt $r12, $r0, reverse
-j incr
+blt $r0, $r12, incr
 
 reverse:
 sub $r12, $r0, $r12 
@@ -106,7 +104,7 @@ j incr
 
 killEnemy:
 addi $r13, $r0, 0 
-addi $r11, $r0, 0 
+addi $r11, $r0, 800 
 addi $r26, $r26, 1 
 blt $r27, $r26, endGame
 jal spawnEnemy 
