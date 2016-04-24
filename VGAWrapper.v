@@ -154,7 +154,7 @@ module VGAWrapper(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VG
 endmodule
 
 
-module kbInput(data, direction, shoot);
+module kbInput(data, direction, shoot, started);
 	//input KB_clk;//, data;
 	//input clock;
 	input [3:0] data;
@@ -167,6 +167,7 @@ module kbInput(data, direction, shoot);
 	wire [3:0] code;
 	assign code = data;
 	
+	output started;
 	
 	//wire latchShot;
 	//wire [3:0] lastCode;
@@ -200,6 +201,10 @@ module kbInput(data, direction, shoot);
 			direction <= 3'd4; // Stop, {100}
 			shoot <= 1'b0;
 			end
+		else if(code == 4'h0)
+			begin
+			started <= 1'b1;
+			end
 		else 
 			begin
 			direction <= direction; 
@@ -212,7 +217,7 @@ endmodule
 module inputFix(clock, resetn, newInput, finalOutput);
 	input newInput, clock, resetn;
 	//output fixedOutput;
-	wire fixedOutput;
+	//wire fixedOutput;
 	output finalOutput;
 	//output lastInput;
 	wire lastInput;
@@ -230,7 +235,7 @@ module inputFix(clock, resetn, newInput, finalOutput);
 	
 	assign changed2 = lastlastInput ^ lastInput;
 	
-	assign fixedOutput = changed ? newInput : 1'b0;
+	//assign fixedOutput = changed ? newInput : 1'b0;
 	
 	assign finalOutput = (changed | changed2) ? newInput : 1'b0; 
 

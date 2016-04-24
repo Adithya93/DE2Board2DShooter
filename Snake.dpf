@@ -2,6 +2,12 @@
 
 <pin_planner>
 	<pin_info>
+		<pin name="toVGA[0]" source="Pin Planner" >
+		</pin>
+		<pin name="toVGA[1]" source="Pin Planner" >
+		</pin>
+		<pin name="toVGA[2]" source="Pin Planner" >
+		</pin>
 		<pin name="led1" source="Pin Planner" >
 		</pin>
 		<pin name="led2" source="Pin Planner" >
