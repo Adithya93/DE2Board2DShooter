@@ -2,41 +2,38 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
-# Start time: 00:37:09 on Apr 24,2016
+# Start time: 03:01:08 on Apr 24,2016
 # vlog -work work Snake.vo 
 # -- Compiling module processor
 # 
 # Top level modules:
 # 	processor
-# End time: 00:37:10 on Apr 24,2016, Elapsed time: 0:00:01
+# End time: 03:01:09 on Apr 24,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
-# Start time: 00:37:10 on Apr 24,2016
-# vlog -work work bexSetxTest.vwf.vt 
+# Start time: 03:01:09 on Apr 24,2016
+# vlog -work work testAsync.vwf.vt 
 # -- Compiling module processor_vlg_vec_tst
 # 
 # Top level modules:
 # 	processor_vlg_vec_tst
-# End time: 00:37:11 on Apr 24,2016, Elapsed time: 0:00:01
+# End time: 03:01:10 on Apr 24,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.processor_vlg_vec_tst -voptargs=""+acc"" 
-# Start time: 00:37:11 on Apr 24,2016
+# Start time: 03:01:11 on Apr 24,2016
 # Loading work.processor_vlg_vec_tst
 # Loading work.processor
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
-# Loading cycloneive_ver.cycloneive_clkctrl
-# Loading cycloneive_ver.cycloneive_mux41
-# Loading cycloneive_ver.cycloneive_ena_reg
 # Loading cycloneive_ver.cycloneive_lcell_comb
 # Loading altera_ver.dffeas
 # Loading cycloneive_ver.cycloneive_ram_block
 # Loading cycloneive_ver.cycloneive_ram_register
 # Loading cycloneive_ver.cycloneive_ram_pulse_generator
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 17536 statements exceeds ModelSim Altera Starter recommended capacity.
+# ** Warning: Design size of 17689 statements exceeds ModelSim Altera Starter recommended capacity.
 # Expect performance to be adversely affected.
-# ** Note: $finish    : bexSetxTest.vwf.vt(117)
-#    Time: 1 us  Iteration: 0  Instance: /processor_vlg_vec_tst
-# End time: 00:37:15 on Apr 24,2016, Elapsed time: 0:00:04
+# ** Note: $finish    : testAsync.vwf.vt(119)
+#    Time: 3 us  Iteration: 0  Instance: /processor_vlg_vec_tst
+# End time: 03:01:29 on Apr 24,2016, Elapsed time: 0:00:18
 # Errors: 0, Warnings: 1

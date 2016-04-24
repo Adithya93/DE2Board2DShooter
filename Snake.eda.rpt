@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Snake
-Sun Apr 24 00:37:00 2016
+Sun Apr 24 03:01:01 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Apr 24 00:37:00 2016 ;
+; EDA Netlist Writer Status ; Successful - Sun Apr 24 03:01:01 2016 ;
 ; Revision Name             ; Snake                                 ;
 ; Top-level Entity Name     ; processor                             ;
 ; Family                    ; Cyclone IV E                          ;
@@ -95,13 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Altera and sold by Altera or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Apr 24 00:36:58 2016
+    Info: Processing started: Sun Apr 24 03:00:59 2016
 Info: Command: quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/simulation/qsim/" Snake -c Snake
+Info (119006): Selected device EP4CE115F29C7 for design "Snake"
 Info (204019): Generated file Snake.vo in folder "C:/Users/Adithya Raghunathan/Desktop/ECE350/HW5FinalCheck/Snake/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 741 megabytes
-    Info: Processing ended: Sun Apr 24 00:37:01 2016
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 733 megabytes
+    Info: Processing ended: Sun Apr 24 03:01:01 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

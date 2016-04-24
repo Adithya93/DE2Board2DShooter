@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Snake
-Sun Apr 24 00:35:26 2016
+Sun Apr 24 01:04:35 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -1211,7 +1211,7 @@ No synchronizer chains to report.
 ; -16.711 ; DXReg:myDXReg|Register32:InsReg|myDFFE:loop1[12].dff|q                 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|divDebug:divider|Register32:dividendReg|myDFFE:loop1[30].dff|q ; inclock      ; inclock     ; 0.500        ; -0.443     ; 16.755     ;
 ; -16.709 ; DXReg:myDXReg|Register32:InsReg|myDFFE:loop1[12].dff|q                 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|divDebug:divider|Register32:dividendReg|myDFFE:loop1[28].dff|q ; inclock      ; inclock     ; 0.500        ; -0.443     ; 16.753     ;
 ; -16.709 ; DXReg:myDXReg|Register32:InsReg|myDFFE:loop1[12].dff|q                 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|divDebug:divider|Register32:dividendReg|myDFFE:loop1[16].dff|q ; inclock      ; inclock     ; 0.500        ; -0.443     ; 16.753     ;
-; -16.701 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a3~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.276     ; 16.934     ;
+; -16.701 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a3~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.276     ; 16.934     ;
 ; -16.699 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable2|q ; Register32:ProgramCounter|myDFFE:loop1[27].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.347      ; 17.533     ;
 ; -16.698 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable2|q ; Register32:ProgramCounter|myDFFE:loop1[25].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.347      ; 17.532     ;
 ; -16.696 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable2|q ; Register32:ProgramCounter|myDFFE:loop1[26].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.347      ; 17.530     ;
@@ -1221,15 +1221,15 @@ No synchronizer chains to report.
 ; -16.689 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; Register32:StatusReg|myDFFE:loop1[23].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.244     ; 16.932     ;
 ; -16.689 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; Register32:StatusReg|myDFFE:loop1[22].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.244     ; 16.932     ;
 ; -16.689 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; Register32:StatusReg|myDFFE:loop1[26].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.244     ; 16.932     ;
-; -16.684 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a0~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.289     ; 16.904     ;
-; -16.679 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a3~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.277     ; 16.911     ;
-; -16.673 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[27].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a3~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.297     ; 16.885     ;
-; -16.667 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a25~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.275     ; 16.901     ;
+; -16.684 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a0~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.289     ; 16.904     ;
+; -16.679 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a3~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.277     ; 16.911     ;
+; -16.673 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[27].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a3~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.297     ; 16.885     ;
+; -16.667 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a25~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.275     ; 16.901     ;
 ; -16.667 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; Register32:StatusReg|myDFFE:loop1[23].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.245     ; 16.909     ;
 ; -16.667 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; Register32:StatusReg|myDFFE:loop1[22].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.245     ; 16.909     ;
 ; -16.667 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; Register32:StatusReg|myDFFE:loop1[26].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.245     ; 16.909     ;
-; -16.662 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a23~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.275     ; 16.896     ;
-; -16.662 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a0~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.290     ; 16.881     ;
+; -16.662 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a23~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.275     ; 16.896     ;
+; -16.662 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a0~porta_address_reg0   ; inclock      ; inclock     ; 0.500        ; -0.290     ; 16.881     ;
 ; -16.661 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[27].dff|q                 ; Register32:StatusReg|myDFFE:loop1[23].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.265     ; 16.883     ;
 ; -16.661 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[27].dff|q                 ; Register32:StatusReg|myDFFE:loop1[22].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.265     ; 16.883     ;
 ; -16.661 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[27].dff|q                 ; Register32:StatusReg|myDFFE:loop1[26].dff|q                                                                  ; inclock      ; inclock     ; 0.500        ; -0.265     ; 16.883     ;
@@ -1242,12 +1242,12 @@ No synchronizer chains to report.
 ; -16.651 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:divEnabler|q      ; Register32:ProgramCounter|myDFFE:loop1[30].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.348      ; 17.486     ;
 ; -16.650 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:divEnabler|q      ; Register32:ProgramCounter|myDFFE:loop1[28].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.348      ; 17.485     ;
 ; -16.650 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:divEnabler|q      ; Register32:ProgramCounter|myDFFE:loop1[29].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.348      ; 17.485     ;
-; -16.647 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a19~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.283     ; 16.873     ;
+; -16.647 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a19~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.283     ; 16.873     ;
 ; -16.647 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[29].dff|q                 ; Register32:ProgramCounter|myDFFE:loop1[31].dff|q                                                             ; inclock      ; inclock     ; 1.000        ; -0.047     ; 17.587     ;
 ; -16.646 ; multDivControl:myMultDivCTRL|multDiv:multDiv0|myDFFE:catchDivEnable3|q ; Register32:StatusReg|myDFFE:loop1[7].dff|q                                                                   ; inclock      ; inclock     ; 0.500        ; -0.440     ; 16.693     ;
-; -16.645 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a25~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.276     ; 16.878     ;
+; -16.645 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a25~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.276     ; 16.878     ;
 ; -16.641 ; multDivControl:myMultDivCTRL|myDFFE:latchDiv|q                         ; Register32:ProgramCounter|myDFFE:loop1[27].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.348      ; 17.476     ;
-; -16.640 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_krb1:auto_generated|ram_block1a23~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.276     ; 16.873     ;
+; -16.640 ; MWReg:myMWReg|Register32:InsReg|myDFFE:loop1[31].dff|q                 ; imem:myimem|altsyncram:altsyncram_component|altsyncram_9kb1:auto_generated|ram_block1a23~porta_address_reg0  ; inclock      ; inclock     ; 0.500        ; -0.276     ; 16.873     ;
 ; -16.640 ; multDivControl:myMultDivCTRL|myDFFE:latchDiv|q                         ; Register32:ProgramCounter|myDFFE:loop1[25].dff|q                                                             ; inclock      ; inclock     ; 0.500        ; 0.348      ; 17.475     ;
 +---------+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
@@ -3540,7 +3540,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Sun Apr 24 00:35:13 2016
+    Info: Processing started: Sun Apr 24 01:04:21 2016
 Info: Command: quartus_sta Snake -c Snake
 Info: qsta_default_script.tcl version: #1
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -3646,9 +3646,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 939 megabytes
-    Info: Processing ended: Sun Apr 24 00:35:26 2016
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 940 megabytes
+    Info: Processing ended: Sun Apr 24 01:04:35 2016
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:11
 
 

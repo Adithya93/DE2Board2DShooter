@@ -1072,6 +1072,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "timerInterrupt",
+					"strict" : false
+				},
+				{
 					"name" : "INreset",
 					"strict" : false
 				},
@@ -1089,10 +1097,6 @@
 				},
 				{
 					"name" : "right",
-					"strict" : false
-				},
-				{
-					"name" : "start",
 					"strict" : false
 				}
 			]
