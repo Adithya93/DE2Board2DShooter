@@ -2,27 +2,27 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
-# Start time: 19:19:03 on Apr 23,2016
+# Start time: 00:37:09 on Apr 24,2016
 # vlog -work work Snake.vo 
-# -- Compiling module skeleton
+# -- Compiling module processor
 # 
 # Top level modules:
-# 	skeleton
-# End time: 19:19:04 on Apr 23,2016, Elapsed time: 0:00:01
+# 	processor
+# End time: 00:37:10 on Apr 24,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
-# Start time: 19:19:04 on Apr 23,2016
-# vlog -work work EnemyShootTest.vwf.vt 
-# -- Compiling module skeleton_vlg_vec_tst
+# Start time: 00:37:10 on Apr 24,2016
+# vlog -work work bexSetxTest.vwf.vt 
+# -- Compiling module processor_vlg_vec_tst
 # 
 # Top level modules:
-# 	skeleton_vlg_vec_tst
-# End time: 19:19:04 on Apr 23,2016, Elapsed time: 0:00:00
+# 	processor_vlg_vec_tst
+# End time: 00:37:11 on Apr 24,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.skeleton_vlg_vec_tst -voptargs=""+acc"" 
-# Start time: 19:19:04 on Apr 23,2016
-# Loading work.skeleton_vlg_vec_tst
-# Loading work.skeleton
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.processor_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 00:37:11 on Apr 24,2016
+# Loading work.processor_vlg_vec_tst
+# Loading work.processor
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
 # Loading cycloneive_ver.cycloneive_clkctrl
@@ -33,16 +33,10 @@
 # Loading cycloneive_ver.cycloneive_ram_block
 # Loading cycloneive_ver.cycloneive_ram_register
 # Loading cycloneive_ver.cycloneive_ram_pulse_generator
-# SDF 10.4b Compiler 2015.05 May 27 2015
-# 
-# Loading instances from Snake_v.sdo
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 17526 statements exceeds ModelSim Altera Starter recommended capacity.
+# ** Warning: Design size of 17536 statements exceeds ModelSim Altera Starter recommended capacity.
 # Expect performance to be adversely affected.
-# Loading timing data from Snake_v.sdo
-# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /skeleton_vlg_vec_tst File: EnemyShootTest.vwf.vt
-# ** Note: $finish    : EnemyShootTest.vwf.vt(129)
-#    Time: 20 us  Iteration: 0  Instance: /skeleton_vlg_vec_tst
-# End time: 19:19:10 on Apr 23,2016, Elapsed time: 0:00:06
+# ** Note: $finish    : bexSetxTest.vwf.vt(117)
+#    Time: 1 us  Iteration: 0  Instance: /processor_vlg_vec_tst
+# End time: 00:37:15 on Apr 24,2016, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1

@@ -1,4 +1,4 @@
-module VGAWrapperOld(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, start, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
+module VGAWrapperOld(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
 	
 	input master_clk;//, KB_clk;//, data; //50MHz
 	//input [3:0] data;
@@ -19,7 +19,7 @@ module VGAWrapperOld(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync,
 	reg game_over;
 	reg border;
 	reg [6:0] size;
-	input start;
+	//input start;
 	reg [9:0] playerX;
 	reg [8:0] playerY;
 	reg playerHead;
@@ -185,7 +185,7 @@ module kbInputOld(data, direction, shoot, started);
 	wire [3:0] code;
 	output reg [2:0] direction;
 	output reg shoot;
-	output started;
+	output reg started;
 	
 	assign code = data;
 	

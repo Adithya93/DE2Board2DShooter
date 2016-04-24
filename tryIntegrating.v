@@ -1,6 +1,6 @@
 module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word, debug_addr, 
 					leds, lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon, 	
-					seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8, outclock, readingPos, testPC, start, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, DAC_clk, blank_n, playerXPosition, bulletXPosition, bulletYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, processor_clock, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+					seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8, outclock, readingPos, testPC, start, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, DAC_clk, blank_n, playerXPosition, bulletXPosition, bulletYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, processor_clock, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, newSTATUS, STATUS, writeStatus, branchException);
 
 	//input 			inclock, resetn;
 	input resetn;
@@ -55,6 +55,10 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	output [8:0] enemyBulletYPosition;
 	output readingEnemyBulletX, readingEnemyBulletY;
 	output win, lose;
+	
+	// DEBUG
+	output [31:0] newSTATUS, STATUS;
+	output writeStatus, branchException;
 	/***
 	output gotShootSignal;
 	
@@ -116,7 +120,7 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 	assign inclock = master_clk;
 	//wire processor_clock;
 	//processor myprocessor(inclock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY);
-	processor myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+	processor myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, newSTATUS, STATUS, writeStatus, branchException);
 
 	
 	// keyboard controller
@@ -153,11 +157,11 @@ module skeleton(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word
 //	VGAWrapper testVGA(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, update_clock);
 // VGAWrapper(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition);	
 //	VGAWrapper testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, left, right, stop, shoot);
-	VGAWrapperOld testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, start, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
+	VGAWrapperOld testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
 	
 endmodule
 
-module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, newSTATUS, STATUS, writeStatus, shouldBranch2);
 
 	input 			inclock, INreset, ps2_key_pressed;
 	input 	[7:0]	ps2_out;
@@ -211,13 +215,13 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	***/
 	
 	// DEBUG WIRES, CAN BE REMOVED
-	wire checkSel, updateBulletSpeed2, checkSel2, bulletSpeed, bulletSpeed2, bulletSpeed3, sanityCheck, sanityCheck2, regFileInput;
+	//wire checkSel, updateBulletSpeed2, checkSel2, bulletSpeed, bulletSpeed2, bulletSpeed3, sanityCheck, sanityCheck2, regFileInput;
+	output [31:0] newSTATUS, STATUS, writeStatus, shouldBranch2;
+	//wire isCorrectSel;
+	//assign isCorrectSel = RegWriteDSel[2] & ~RegWriteDSel[1] & RegWriteDSel[0];
 	
-	wire isCorrectSel;
-	assign isCorrectSel = RegWriteDSel[2] & ~RegWriteDSel[1] & RegWriteDSel[0];
-	
-	myDFFE latchCorrectSel(isCorrectSel & extendedShootData[0], clock, reset, updateBulletSpeed, checkSel);
-	myDFFE latchCorrectSel2(isCorrectSel & extendedShootData[0], ~clock, reset, updateBulletSpeed2, checkSel2);
+	//myDFFE latchCorrectSel(isCorrectSel & extendedShootData[0], clock, reset, updateBulletSpeed, checkSel);
+	//myDFFE latchCorrectSel2(isCorrectSel & extendedShootData[0], ~clock, reset, updateBulletSpeed2, checkSel2);
 	
 	/***
 	output [31:0] RS2Val;
@@ -243,22 +247,21 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	wire [1:0] ALUIn2Bypass;
 	***/
 	
-	wire updateBulletSpeed;
+	/***
+	//wire updateBulletSpeed;
 	//wire updateBulletSpeed2;
 	
-	assign updateBulletSpeed = (MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & MWIns[27]);
+	//assign updateBulletSpeed = (MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & MWIns[27]);
 	
-	myDFFE latchBulletUpdate(updateBulletSpeed, clock, reset, 1'b1, updateBulletSpeed2);
+	//myDFFE latchBulletUpdate(updateBulletSpeed, clock, reset, 1'b1, updateBulletSpeed2);
 	
 	//myDFFE latchBulletSpeed(RegWriteData[0], clock, reset, updateBulletSpeed, bulletSpeed);
-	myDFFE latchBulletSpeed(allOtherData[0], clock, reset, updateBulletSpeed, bulletSpeed);
 
-	//myDFFE latchBulletSpeed2(RegWriteData[0], ~clock, reset, updateBulletSpeed, bulletSpeed2);
-	//myDFFE latchBulletSpeed2(allOtherData[0], ~clock, reset, updateBulletSpeed, bulletSpeed2);
-	myDFFE latchBulletSpeed2(RegWriteData[0], clock, reset, updateBulletSpeed | updateBulletSpeed2, bulletSpeed2);
+	
+	//myDFFE latchBulletSpeed2(RegWriteData[0], clock, reset, updateBulletSpeed | updateBulletSpeed2, bulletSpeed2);
 	
 	//myDFFE latchBulletSpeed3(bulletSpeed2, clock, reset, bulletSpeed2, bulletSpeed3);
-
+	***/
 	wire reset;
 	
 	assign reset = ~INreset; // Skeleton assumes processor is active-high but mine is active-low
@@ -387,7 +390,7 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	// wire RegWE;
 	wire [1:0] nextPCSel;
 
-	 wire [2:0] RegWriteDSel;
+	wire [2:0] RegWriteDSel;
 	 //output [2:0] RegWriteDSel;
 	 
 	//output [2:0] RegWriteDSel;
@@ -411,7 +414,9 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	//wire STATUS;
 	//wire [11:0] branchOrNext;
 	//wire [31:0] branchOrNext;
+	
 	CLAdder getAddr(1'b0, DXPC, sxDXImm, sxAbsBranchAddr, branchAddrOverflow); // should connect to status
+	
 	assign absBranchAddr = sxAbsBranchAddr[11:0];
 	//assign branchOrNext = shouldBranch ? absBranchAddr : DXPC;
 	
@@ -424,9 +429,23 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	//isBranch - select input is output of or gate of output of and gates that take isBranch and ALU outputs
 	and BNETest(shouldBranch0, BNE, notEqual);
 	and BLTest(shouldBranch1, BLT, ~lessThan & notEqual); // ALU DOES RS - RD, NEED TO FLIP
-	and BEXTest(shouldBranch2, BEX, STATUS[0]);
+	//and BEXTest(shouldBranch2, BEX, STATUS[0]);
+	and BEXTest(shouldBranch2, BEX, notEqual);
 	or branchTest(shouldBranch, shouldBranch0, shouldBranch1, shouldBranch2);
 
+	
+	/***
+	// Check all bits, not just 0
+	wire isException;
+	wire exception0, exception1, exception2, exception3, exception4, exception5;
+	or chekcStatus0(exception0, STATUS[0], STATUS[1], STATUS[2], STATUS[3], STATUS[4], STATUS[5]);
+	or checkStatus1(exception1, STATUS[6], STATUS[7], STATUS[8], STATUS[9]);
+	or checkStatus2(exception2, STATUS[10], STATUS[11], STATUS[12], STATUS[13]);
+	or checkStatus3(exception3, STATUS[14], STATUS[15], STATUS[16], STATUS[17]);
+	or checkStatus4(exception4, STATUS[18], STATUS[19], STATUS[20], STATUS[21]);
+	or checkStatus5(exception5, STATUS[22], STATUS[23], STATUS[24], STATUS[25], STATUS[26]);
+	or finalStatus(isException, exception0, exception1, exception2, exception3, exception4, exception5);
+	***/
 
 	// TO - DO : JUMP INSTRUCTIONS
 	wire [31:0] normalJump, jr;
@@ -448,22 +467,24 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	
 	//eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, RegWriteData);
 	// CHANGE TO WIRE SPEED DIRECTLY INTO 2-1 MUX WITH
-	wire [31:0] allOtherData;
+	//wire [31:0] allOtherData;
 	
-	eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, allOtherData);
+	eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, RegWriteData);
 
-	assign RegWriteData = (updateBulletSpeed | updateBulletSpeed2) ? extendedShootData : allOtherData;
+	//assign RegWriteData = (updateBulletSpeed | updateBulletSpeed2) ? extendedShootData : allOtherData;
 	
-	assign bulletSpeed3 = extendedShootData[0];
+	//assign bulletSpeed3 = extendedShootData[0];
 	
 	//assign sanityCheck = bulletSpeed3 & updateBulletSpeed;
 	// DEBUG ONLY
+	/***
 	myDFFE latchSanityCheck(bulletSpeed3 & updateBulletSpeed, clock, reset, updateBulletSpeed, sanityCheck);
 	
 	
 	myDFFE latchSanityCheck2(bulletSpeed3 & updateBulletSpeed2, clock, reset, updateBulletSpeed2, sanityCheck2);
 	
 	myDFFE latchRegFileInput(RegWriteData[0], clock, reset, updateBulletSpeed, regFileInput);
+	***/
 	//assign regFileInput = RegWriteData[0];
 	
 	
@@ -487,7 +508,7 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	assign finalNextPCSel[1:0] = nextPCSel;
 	//eightOneMux nextPCSelector(PC, normalJump, jr, PC, absBranchAddr, absBranchAddr, absBranchAddr, absBranchAddr, finalNextPCSel, sxiMemAddr);
 	//eightOneMux nextPCSelector(pcOrPrediction, normalJump, jr, pcOrPrediction, absBranchAddr, absBranchAddr, absBranchAddr, absBranchAddr, finalNextPCSel, sxiMemAddr);
-	eightOneMux nextPCSelector(pcOrPrediction, normalJump, jr, pcOrPrediction, absBranchAddr, absBranchAddr, absBranchAddr, absBranchAddr, finalNextPCSel, penultimateAddr);
+	eightOneMux nextPCSelector(pcOrPrediction, normalJump, jr, pcOrPrediction, absBranchAddr, sxBEXAddr, absBranchAddr, sxBEXAddr, finalNextPCSel, penultimateAddr);
 	// Mis-Prediction : False Positive
 	assign sxiMemAddr = (~shouldBranch & wasTaken) ? DXPC : penultimateAddr; 
 	
@@ -602,6 +623,13 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	
 	wire MemDataBypass, XMRS2Sel;
 	
+	wire [31:0] sxBEXAddr;
+	assign sxBEXAddr[31:27] = DXPC[31:27];
+	assign sxBEXAddr[26:0] = DXIns[26:0];
+	
+	//wire [31:0] chosenRelAddr;
+	//assign chosenRelAddr = BEX ? sxBEXAddr : sxDXImm;
+	
 	assign sxDXImm[16:0] = DXIns[16:0];
 	//assign sxDXImm[31:17] = {15{1'b0}};
 	assign sxDXImm[31:17] = DXIns[16] ? {15{1'b1}} : {15{1'b0}};
@@ -631,10 +659,18 @@ module processor(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data
 	//fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, DXRS1Val, ALUIn1Bypass, ALUInputA);
 	
 	// FOR PROJECT - INCLUDE EXTRA SELECT BIT TO INCORPORATE MX BYPASS FROM IO REG
+	// ALSO ALLOW STATUS TO GO INTO ALUINPUT A if DXINS is BEX
+	wire [31:0] usualALUInA, usualALUInB;
 	
-	fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, XMALUOutput, ALUIn1Bypass, ALUInputA);
+	fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, XMALUOutput, ALUIn1Bypass, usualALUInA);
+	
 	//fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, chosenALUInB, ALUIn2Bypass, ALUInputB);
-	fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, XMALUOutput, ALUIn2Bypass, ALUInputB);
+	
+	fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, XMALUOutput, ALUIn2Bypass, usualALUInB);
+
+	assign ALUInputA = BEX ? STATUS : usualALUInA;
+	assign ALUInputB = BEX ? 32'b0 : usualALUInB;
+	
 	
 	// DEBUG ONLY
 	//output [31:0] ALUInput1, ALUInput2, ALUOutput;
@@ -1243,7 +1279,8 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	assign nextPC[1] = ~MWopcode[4] & ~MWopcode[3] & MWopcode[2] & ~MWopcode[1] & ~MWopcode[0];
 	***/
 	// 01 : {00001, 00011}; 10 : {00100}
-	assign nextPC[0] = (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & ~FDopcode[1] & FDopcode[0]) | (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & FDopcode[1] & FDopcode[0]);
+	// FOR PROJECT : INCLUDE BEX in nextPC[0] to get 101
+	assign nextPC[0] = (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & ~FDopcode[1] & FDopcode[0]) | (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & FDopcode[1] & FDopcode[0]) | BEX;
 	assign nextPC[1] = ~FDopcode[4] & ~FDopcode[3] & FDopcode[2] & ~FDopcode[1] & ~FDopcode[0];
 	
 	
@@ -1252,6 +1289,7 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	assign BNE = (~DXopcode[4] & ~DXopcode[3] & ~DXopcode[2] & DXopcode[1] & ~DXopcode[0]);
 	assign BLT = (~DXopcode[4] & ~DXopcode[3] & DXopcode[2] & DXopcode[1] & ~DXopcode[0]);
 	assign BEX = (DXopcode[4] & ~DXopcode[3] & DXopcode[2] & DXopcode[1] & ~DXopcode[0]);
+	//assign BEX = (FDopcode[4] & ~FDopcode[3] & FDopcode[2] & FDopcode[1] & ~FDopcode[0]);
 	
 	// {00111}
 	assign memWE = (~XMopcode[4] & ~XMopcode[3] & XMopcode[2] & XMopcode[1] & XMopcode[0]);
@@ -3574,7 +3612,7 @@ module inputController(clock, reset, start, inleft, inright, inshoot, instop, sp
 	//input resetSpeedNext, resetShootNext;
 	input resetSpeedNextNext, resetShootNextNext;
 	
-	
+	input start;
 	wire left, right, stop, shoot;
 	
 	//assign left = ~inleft;
