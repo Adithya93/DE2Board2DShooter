@@ -14,7 +14,8 @@ addi $r13, $r0, 40
 addi $r27, $r0, 4
 add $r14, $r11, $r0
 add $r15, $r13, $r0 
-addi $r19, $r0, 8  
+addi $r19, $r0, 16 
+addi $r7, $r0, 50 
 
 loop:
 add $r0, $r0, $r0
@@ -89,20 +90,29 @@ j shouldEnemyShoot
 
 shouldEnemyShoot:
 addi $r17, $r17, 1
+addi $r23, $r0, 4
+blt $r19, $r23, decide 
 jal incrDifficulty
+decide:
 addi $r23, $r19, -1
 and $r23, $r17, $r23
 bne $r23, $r0, restart
 jal spawnEnemyBullet
 
 restart:
+bex startPause
 j loop
+
+startPause:
+setx 0
+j pause
 
 
 incrDifficulty:
 blt $r18, $r19, goBack
 add $r18, $r0, $r0
 sra $r19, $r19, 1 
+sll $r7, $r7, 1
 goBack:
 jr $ra
 
@@ -150,7 +160,7 @@ jr $ra
 spawnEnemyBullet:
 add $r14, $r11, $r0
 addi $r15, $r13, 20
-addi $r16, $r0, 50
+add $r16, $r0, $r7
 addi $r18, $r18, 1
 jr $ra
 
@@ -179,6 +189,11 @@ addi $r26, $r26, 1
 blt $r27, $r26, win
 jal spawnEnemy 
 j movePlayer
+
+
+pause:
+bex loop
+j pause
 
 
 win:

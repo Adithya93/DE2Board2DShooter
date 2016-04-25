@@ -1257,8 +1257,8 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	// As long as the writeback register of multDiv is not all zeros, should choose its output
 	//assign RegWriteD[1] = (multDivIns[31] | multDivIns[30] | multDivIns[29] | multDivIns[28] | multDivIns[27]) | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
 	
-	//assign RegWriteD[1] = multDivResultRDY | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
-	assign RegWriteD[1] = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
+	assign RegWriteD[1] = multDivResultRDY | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
+	//assign RegWriteD[1] = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
 	
 	// FOR PROJECT : 1xx : choose value from inputControl, for getSpeed (11000) and getShoot(11001) instructions
 	assign RegWriteD[2] = (MWopcode[4] & MWopcode[3] & ~MWopcode[2] & ~MWopcode[1]);
@@ -1499,8 +1499,13 @@ module multDivControl(clock, ins, opA, opB, reset, result, writeReg, resultRDY, 
 	wire mult, div;
 	assign op = ins[6:2];
 	assign RD = ins[26:22];
-	assign mult = ~op[4] & ~op[3] & op[2] & op[1] & ~op[0];
-	assign div = ~op[4] & ~op[3] & op[2] & op[1] & op[0];
+	
+	wire isRType;
+	assign isRType = (~ins[31] & ~ins[30] & ~ins[29] & ~ins[28] & ~ins[27]);
+	assign mult = (~op[4] & ~op[3] & op[2] & op[1] & ~op[0]) & isRType;
+	assign div = (~op[4] & ~op[3] & op[2] & op[1] & op[0]) & isRType;
+	
+	
 	wire [4:0] currentRD; // Latched version of RD
 	wire [31:0] currentOpA, currentOpB; // Latched version of opA and opB
 	
