@@ -55,6 +55,9 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	output [8:0] enemyBulletYPosition;
 	output readingEnemyBulletX, readingEnemyBulletY;
 	output win, lose;
+	
+	wire [7:0] displayScore;
+	
 	/***
 	output gotShootSignal;
 	
@@ -116,7 +119,7 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	assign inclock = master_clk;
 	//wire processor_clock;
 	//processor myprocessor(inclock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY);
-	processorRecovered myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+	processorRecovered myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
 
 	
 	// keyboard controller
@@ -126,8 +129,8 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	//lcd mylcd(clock, ~resetn, lcd_write_en, lcd_write_data[7:0], lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon);
 	
 	// example for sending ps2 data to the first two seven segment displays
-	//Hexadecimal_To_Seven_Segment hex1(ps2_out[3:0], seg1);
-	//Hexadecimal_To_Seven_Segment hex2(ps2_out[7:4], seg2);
+	Hexadecimal_To_Seven_Segment hex1(displayScore[3:0], seg1);
+	Hexadecimal_To_Seven_Segment hex2(displayScore[7:4], seg2);
 	
 	// the other seven segment displays are currently set to 0
 	//Hexadecimal_To_Seven_Segment hex3(4'b0, seg3);
@@ -157,7 +160,7 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	
 endmodule
 
-module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
 
 	input 			inclock, INreset, ps2_key_pressed;
 	input 	[7:0]	ps2_out;
@@ -269,14 +272,14 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	// Output Coordinates to VGA
 	//output [31:0] toVGA;
-	wire [31:0] playerXCoords, playerYCoords, bulletXCoords, bulletYCoords, enemyXCoords, enemyYCoords;
+	wire [31:0] playerXCoords, playerYCoords, bulletXCoords, bulletYCoords, enemyXCoords, enemyYCoords, score;
 	
 	wire [31:0] enemyBulletXCoords, enemyBulletYCoords;
 	// TO BE ASSIGNED
 	
 	//wire readingBulletX, readingBulletY,
 	wire readingPlayerY;
-	wire readingEnemyX, readingEnemyY;
+	wire readingEnemyX, readingEnemyY, readingSCore;
 	output readingBulletX, readingBulletY;
 	
 	output readingEnemyBulletX, readingEnemyBulletY;
@@ -286,6 +289,7 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	output [8:0] playerYPosition, bulletYPosition, enemyYPosition;
 	output [9:0] enemyBulletXPosition;
 	output [8:0] enemyBulletYPosition;
+	output [7:0] displayScore;
 
 		// TRY SWITCHING TO NEG CLOCK
 		// WHEN THAT FAILS, TRY WIRING MWALUOUTPUT INSTEAD OF REGWRITEDATA
@@ -305,7 +309,9 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	//assign enemyYCoords = 32'd550;// TEMP
 	
-
+	Register32 scoreReg(~clock, readingScore, MWALUOutput, reset, score);
+	
+	assign displayScore = score[7:0];
 	
 	
 	//assign toVGA = xCoords;
@@ -730,6 +736,8 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	assign readingEnemyX = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & ~MWIns[24] & MWIns[23] & MWIns[22]); // RD of 11
 	//assign readingEnemyY = 1'b0; // TO DO!
 	assign readingEnemyY = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & ~MWIns[23] & MWIns[22]);// RD of 13
+	
+	assign readingScore = (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27]) & (MWIns[26] & MWIns[25] & ~MWIns[24] & MWIns[23] & ~MWIns[22]); // RD of 26
 	
 	
 	assign readingEnemyBulletX = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & MWIns[23] & ~MWIns[22]); // RD of 14
