@@ -1,4 +1,4 @@
-module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, start, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
+module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, start, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, bulletX2Position, bulletY2Position, win, lose);
 	
 	input master_clk;//, KB_clk;//, data; //50MHz
 	//input [3:0] data;
@@ -49,13 +49,19 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 	input [9:0] enemyBulletXPosition;
 	input [8:0] enemyBulletYPosition;
 	
+	input [9:0] bulletX2Position;
+	input [8:0] bulletY2Position;
+	
 	input win, lose;
 	
 	reg [9:0] enemyBulletX;
 	reg [8:0] enemyBulletY;
 	reg enemyBullet;
 	
+	reg bullet2;
 	
+	reg [9:0] bullet2X;
+	reg [8:0] bullet2Y;
 	//output update_clock;
 	output processor_clock;
 	
@@ -109,6 +115,9 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 	wire [9:0] xEBPos;
 	wire [8:0] yEBPos;
 	
+	wire [9:0] xB2Pos;
+	wire [8:0] yB2Pos;
+	
 	assign xPos = playerXPosition;
 	assign yPos = playerYPosition;
 	assign xEPos = enemyXPosition;
@@ -118,6 +127,9 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 	
 	assign xEBPos = enemyBulletXPosition;
 	assign yEBPos = enemyBulletYPosition;
+	
+	assign xB2Pos = bulletX2Position;
+	assign yB2Pos = bulletY2Position;
 	
 	updateClk UPDATE(master_clk, update);
 	assign DAC_clk = VGA_clk;
@@ -138,6 +150,9 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 		
 		enemyBulletX = xEBPos;
 		enemyBulletY = yEBPos;
+		
+		bullet2X = xB2Pos;
+		bullet2Y = yB2Pos;
 	end
 	
 		
@@ -154,6 +169,7 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 		bullet = ((xCount > bulletX && xCount < bulletX+10) && (yCount > bulletY && yCount < bulletY+10));
 		
 		enemyBullet = ((xCount > enemyBulletX && xCount < enemyBulletX+10) && (yCount > enemyBulletY && yCount < enemyBulletY+10));
+		bullet2 = ((xCount > bullet2X && xCount < bullet2X+10) && (yCount > bullet2Y && yCount < bullet2Y+10));
 	end
 
 	always@(posedge VGA_clk)
@@ -168,8 +184,8 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 	//assign R = (displayArea && enemy);
 	assign R = (displayArea && (enemy || enemyBullet)) || lose;
 	//assign G = (displayArea && (bullet || playerHead || enemyHead));
-	assign G = (displayArea && (bullet || playerHead || enemyHead || enemyBullet)) || win; // Red + Green = Yellow
-	assign B = (displayArea && (player || border));//---------------------------------------------------------------Added border
+	assign G = (displayArea && (bullet || playerHead || enemyHead || enemyBullet || bullet2)) || win; // Red + Green = Yellow
+	assign B = (displayArea && (player || border || bullet2));//---------------------------------------------------------------Added border
 	always@(posedge VGA_clk)
 	begin
 		VGA_R = {8{R}};
@@ -180,13 +196,27 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 endmodule
 
 
+
+module processorClk(master_clk, processor_clock);
+	input master_clk;
+	output reg processor_clock;
+	reg [20:0]count;	
+
+	always@(posedge master_clk)
+	begin
+		count <= count + 1;
+		if(count == 118516)
+		begin
+			processor_clock <= ~processor_clock;
+			count <= 0;
+		end	
+	end
+endmodule
+
+
+
 module kbInput(data, direction, shoot, started);
-	//input KB_clk;//, data;
-	//input clock;
 	input [3:0] data;
-	//output reg [9:0] pos; 
-	//wire [3:0] code;
-	//reg [3:0] code;
 	output reg [2:0] direction;
 	output reg shoot;
 	
@@ -195,46 +225,45 @@ module kbInput(data, direction, shoot, started);
 	
 	output reg started;
 	
-	//wire latchShot;
-	//wire [3:0] lastCode;
-	
-	//always@(posedge clock or code)
-	//always@(posedge clock)
-	//always@(posedge clock or code)
-	//begin
-	//if (~posedge clock) // code must have changed
 	always@(code)
 	begin
 		if(code == 4'h4)
 			begin
 			direction <= 3'd1; // Move left, {001}
 			shoot <= 1'b0;
+			started <= 1'b0;
 			end
 		else if(code == 4'h5)
 			begin
 			//direction <= direction;
 			direction <= 3'd4;
 			shoot <= 1'b1;
+			started <= 1'b0;
 			//code <= 4'b0;
 			end
 		else if(code == 4'h6)
 			begin
 			direction <= 3'd2; // Move right, {010}
 			shoot <= 1'b0;
+			started <= 1'b0;
 			end
 		else if(code == 4'h2)
 			begin
 			direction <= 3'd4; // Stop, {100}
 			shoot <= 1'b0;
+			started <= 1'b0;
 			end
-		else if(code == 4'h0)
+		else if(code == 4'h8)
 			begin
 			started <= 1'b1;
+			shoot <= 1'b0;
+			direction <= 3'd4;
 			end
 		else 
 			begin
 			direction <= direction; 
 			shoot <= 1'b0;
+			started <= 1'b0;
 			end
 	end		
 endmodule

@@ -1,6 +1,6 @@
 module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/debug_word, debug_addr, 
 					leds, lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon, 	
-					seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8, outclock, readingPos, testPC, start, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, DAC_clk, blank_n, playerXPosition, bulletXPosition, bulletYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, processor_clock, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+					seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8, outclock, readingPos, testPC, start, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, DAC_clk, blank_n, playerXPosition, bulletXPosition, bulletYPosition, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, processor_clock, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose, ioEXCEPTION, testInput, bulletX2Position, bulletY2Position);
 
 	//input 			inclock, resetn;
 	input resetn;
@@ -40,7 +40,10 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	// FOR DEBUGGING
 	output outclock, readingPos;
 	//output [2:0] testPC;
-	output [4:0] testPC;
+	output testInput;
+	//output [4:0] testPC;
+	output [6:0] testPC;
+	
 	//output [31:0] toVGA;
 	output [9:0] playerXPosition, bulletXPosition;
 	output [8:0] bulletYPosition;
@@ -54,6 +57,10 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	output [9:0] enemyBulletXPosition;
 	output [8:0] enemyBulletYPosition;
 	output readingEnemyBulletX, readingEnemyBulletY;
+	
+	output [9:0] bulletX2Position;
+	output [8:0] bulletY2Position;
+	
 	output win, lose;
 	
 	wire [7:0] displayScore;
@@ -96,6 +103,7 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	output [7:0] VGA_R, VGA_G, VGA_B;  //Red, Green, Blue VGA signals
 	output VGA_hSync, VGA_vSync, DAC_clk, blank_n; //Horizontal and Vertical sync signals
 	
+	output ioEXCEPTION;
 	/***
 	output [31:0] RS1Val, RS2Val, RDVal;
 	output [31:0] speedData;
@@ -119,7 +127,7 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	assign inclock = master_clk;
 	//wire processor_clock;
 	//processor myprocessor(inclock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, RegWriteData, RegWriteDSel, speedData, shootData, readingBulletX, readingBulletY);
-	processorRecovered myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+	processorRecovered myprocessor(processor_clock, ~resetn, ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data, debug_word, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, bulletX2Position, bulletY2Position, win, lose, ioEXCEPTION, testInput);
 
 	
 	// keyboard controller
@@ -131,6 +139,14 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	// example for sending ps2 data to the first two seven segment displays
 	Hexadecimal_To_Seven_Segment hex1(displayScore[3:0], seg1);
 	Hexadecimal_To_Seven_Segment hex2(displayScore[7:4], seg2);
+	
+	// KILL THE OTHER HEX SEGMENTS SO THEY DON'T RANDOMLY LIGHT UP AND MESS UP OUR GRADE
+	assign seg3 = 7'b0;
+	assign seg4 = 7'b0;
+	assign seg5 = 7'b0;
+	assign seg6 = 7'b0;
+	assign seg7 = 7'b0;
+	assign seg8 = 7'b0;
 	
 	// the other seven segment displays are currently set to 0
 	//Hexadecimal_To_Seven_Segment hex3(4'b0, seg3);
@@ -156,11 +172,11 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 //	VGAWrapper testVGA(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, update_clock);
 // VGAWrapper(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition);	
 //	VGAWrapper testVGA(start, master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, left, right, stop, shoot);
-	VGAWrapperRecovered testVGA(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, start, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, win, lose);
+	VGAWrapperRecovered testVGA(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, resetn, IRDA_RXD, playerXPosition, playerYPosition, enemyXPosition, enemyYPosition, bulletXPosition, bulletYPosition, processor_clock, start, left, right, stop, shoot, enemyBulletXPosition, enemyBulletYPosition, bulletX2Position, bulletY2Position, win, lose);
 	
 endmodule
 
-module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, win, lose);
+module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, bulletX2Position, bulletY2Position, win, lose, ioException, testInput);
 
 	input 			inclock, INreset, ps2_key_pressed;
 	input 	[7:0]	ps2_out;
@@ -189,6 +205,13 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	// DEBUG
 	output [31:0] RegWriteData;
+	output ioException;
+	assign ioException = ioInterrupt;
+	output testInput;
+	assign testInput = start;
+	//output BEX, shouldBranch2;
+	//output [31:0] STATUS;
+	//output writeStatus;
 	/***
 	
 	output gotShootSignal;
@@ -275,12 +298,16 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	wire [31:0] playerXCoords, playerYCoords, bulletXCoords, bulletYCoords, enemyXCoords, enemyYCoords, score;
 	
 	wire [31:0] enemyBulletXCoords, enemyBulletYCoords;
+	
+	wire [31:0] bulletX2Coords, bulletY2Coords;
 	// TO BE ASSIGNED
 	
 	//wire readingBulletX, readingBulletY,
 	wire readingPlayerY;
 	wire readingEnemyX, readingEnemyY, readingSCore;
 	output readingBulletX, readingBulletY;
+	
+	wire readingBulletX2, readingBulletY2;
 	
 	output readingEnemyBulletX, readingEnemyBulletY;
 	
@@ -291,6 +318,9 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	output [8:0] enemyBulletYPosition;
 	output [7:0] displayScore;
 
+	output [9:0] bulletX2Position;
+	output [8:0] bulletY2Position;
+	
 		// TRY SWITCHING TO NEG CLOCK
 		// WHEN THAT FAILS, TRY WIRING MWALUOUTPUT INSTEAD OF REGWRITEDATA
 	Register32 playerXReg(~clock, readingPos, RegWriteData, reset, playerXCoords);
@@ -311,6 +341,9 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	Register32 scoreReg(~clock, readingScore, MWALUOutput, reset, score);
 	
+	Register32 bulletXReg2(~clock, readingBulletX2, RegWriteData, reset, bulletX2Coords);
+	Register32 bulletYReg2(~clock, readingBulletY2, RegWriteData, reset, bulletY2Coords);
+	
 	assign displayScore = score[7:0];
 	
 	
@@ -325,13 +358,18 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	assign enemyBulletXPosition = enemyBulletXCoords[9:0];
 	assign enemyBulletYPosition = enemyBulletYCoords[8:0];
 	
+	assign bulletX2Position = bulletX2Coords[9:0];
+	assign bulletY2Position = bulletY2Coords[8:0];
+	
 	// DEBUG ONLY - remember to change to wire
 	output outclock, readingPos;
 	//output [2:0] testPC;
-	output [4:0] testPC;
+	output [6:0] testPC;
 	assign outclock = clock;
 	//assign testPC = FDPC[2:0];
-	assign testPC = FDPC[4:0];
+	//assign testPC = FDPC[4:0];
+	assign testPC = FDPC[6:0];
+	
 	/***
 	output [31:0] RS1Val, RS2Val, RegWriteData;
 	output [31:0] iMemAddr, FDIns, DXIns, XMIns, MWIns;
@@ -401,7 +439,7 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	//assign sxImm[16:0] = inst[16:0];
 	wire ioInterrupt;
 	
-	control insnDecoder(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpBSel, memWE, RS2Sel, RD, ALUOpcode, RegWriteDSel, nextPCSel, BNE, BLT, BEX, writeStatus, newSTATUS, hasPrediction, ioInterrupt);
+	control insnDecoder(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpBSel, memWE, RS2Sel, RD, ALUOpcode, RegWriteDSel, nextPCSel, BNE, BLT, BEX, writeStatus, newSTATUS, hasPrediction, ioInterrupt, finalNextPCSel[2]);
 	
 	// adder for Absolute Address from Relative Address and branch-related hardware
 	wire [31:0] sxAbsBranchAddr;
@@ -429,7 +467,7 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	//isBranch - select input is output of or gate of output of and gates that take isBranch and ALU outputs
 	and BNETest(shouldBranch0, BNE, notEqual);
 	and BLTest(shouldBranch1, BLT, ~lessThan & notEqual); // ALU DOES RS - RD, NEED TO FLIP
-	and BEXTest(shouldBranch2, BEX, STATUS[0]);
+	and BEXTest(shouldBranch2, BEX, notEqual);
 	or branchTest(shouldBranch, shouldBranch0, shouldBranch1, shouldBranch2);
 
 
@@ -492,7 +530,8 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	assign finalNextPCSel[1:0] = nextPCSel;
 	//eightOneMux nextPCSelector(PC, normalJump, jr, PC, absBranchAddr, absBranchAddr, absBranchAddr, absBranchAddr, finalNextPCSel, sxiMemAddr);
 	//eightOneMux nextPCSelector(pcOrPrediction, normalJump, jr, pcOrPrediction, absBranchAddr, absBranchAddr, absBranchAddr, absBranchAddr, finalNextPCSel, sxiMemAddr);
-	eightOneMux nextPCSelector(pcOrPrediction, normalJump, jr, pcOrPrediction, absBranchAddr, absBranchAddr, absBranchAddr, absBranchAddr, finalNextPCSel, penultimateAddr);
+	eightOneMux nextPCSelector(pcOrPrediction, normalJump, jr, pcOrPrediction, absBranchAddr, sxBEXAddr, absBranchAddr, sxBEXAddr, finalNextPCSel, penultimateAddr);
+
 	// Mis-Prediction : False Positive
 	assign sxiMemAddr = (~shouldBranch & wasTaken) ? DXPC : penultimateAddr; 
 	
@@ -607,6 +646,10 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	wire MemDataBypass, XMRS2Sel;
 	
+	wire [31:0] sxBEXAddr;
+	assign sxBEXAddr[31:27] = DXPC[31:27];
+	assign sxBEXAddr[26:0] = DXIns[26:0];
+	
 	assign sxDXImm[16:0] = DXIns[16:0];
 	//assign sxDXImm[31:17] = {15{1'b0}};
 	assign sxDXImm[31:17] = DXIns[16] ? {15{1'b1}} : {15{1'b0}};
@@ -627,19 +670,20 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	multDivStalls multDivHazards(FDIns, XMIns, RS2Sel, multDivResultRDY, multDivInputRDY, multDivRD, dataStructStall, warStall);
 	
 	
-	
-	
-	
 		// Bypass MXes & Bypass Control
 	bypassControl bpc(DXIns, XMIns, MWIns, ALUIn1Bypass, ALUIn2Bypass, MemDataBypass, XMRS2Sel);
-	//fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, MWALUOutput, DXRS1Val, ALUIn1Bypass, ALUInputA);
-	//fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, DXRS1Val, ALUIn1Bypass, ALUInputA);
+	// ALSO ALLOW STATUS TO GO INTO ALUINPUT A if DXINS is BEX
+	wire [31:0] usualALUInA, usualALUInB;
 	
-	// FOR PROJECT - INCLUDE EXTRA SELECT BIT TO INCORPORATE MX BYPASS FROM IO REG
+	fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, XMALUOutput, ALUIn1Bypass, usualALUInA);
 	
-	fourOneMux ALUIn1Selector(DXRS1Val, XMALUOutput, RegWriteData, XMALUOutput, ALUIn1Bypass, ALUInputA);
 	//fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, chosenALUInB, ALUIn2Bypass, ALUInputB);
-	fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, XMALUOutput, ALUIn2Bypass, ALUInputB);
+	
+	fourOneMux ALUIn2Selector(chosenALUInB, XMALUOutput, MWALUOutput, XMALUOutput, ALUIn2Bypass, usualALUInB);
+
+	assign ALUInputA = BEX ? STATUS : usualALUInA;
+	assign ALUInputB = BEX ? 32'b0 : usualALUInB;
+	
 	
 	// DEBUG ONLY
 	//output [31:0] ALUInput1, ALUInput2, ALUOutput;
@@ -649,8 +693,7 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	//assign ALUOpcode = DXIns[6:2];
 	assign ALUShiftAmt = DXIns[11:7];
-	ALU myALU(ALUInputA, ALUInputB, ALUOpcode, ALUShiftAmt, ALUOutput, notEqual, lessThan, ALUoverflow);
-	
+	ALU myALU(ALUInputA, ALUInputB, ALUOpcode, ALUShiftAmt, ALUOutput, notEqual, lessThan, ALUoverflow);	
 	
 	// IMem Ports
 	
@@ -743,6 +786,9 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	assign readingEnemyBulletX = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & MWIns[23] & ~MWIns[22]); // RD of 14
 	assign readingEnemyBulletY = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & MWIns[24] & MWIns[23] & MWIns[22]); // RD of 15
 	
+	assign readingBulletX2 = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & ~MWIns[24] & ~MWIns[23] & ~MWIns[22]); // RD of 8
+	assign readingBulletY2 = ((~MWIns[31] & ~MWIns[30] & ~MWIns[29] & ~MWIns[28] & ~MWIns[27]) | (~MWIns[31] & ~MWIns[30] & MWIns[29] & ~MWIns[28] & MWIns[27])) & (~MWIns[26] & MWIns[25] & ~MWIns[24] & ~MWIns[23] & MWIns[22]); // RD of 9	
+
 	myDFFE latchPos0(RS1Val[0], clock, reset, readingPos, leds[5]);
 	myDFFE latchPos1(RS1Val[1], clock, reset, readingPos, leds[6]);
 	myDFFE latchPos2(RS1Val[2], clock, reset, readingPos, leds[7]);
@@ -1192,7 +1238,7 @@ module bypassControl(DXIns, XMIns, MWIns, ALUIn1Bypass, ALUIn2Bypass, MemDataByp
 	
 endmodule
 
-module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpB, memWE, RS2Sel, RD, ALUOpcode, RegWriteD, nextPC, BNE, BLT, BEX, statusEnable, finalSTATUS, hasPrediction, must_update); // isBranch
+module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, multDivRD, RegWE, ALUOpB, memWE, RS2Sel, RD, ALUOpcode, RegWriteD, nextPC, BNE, BLT, BEX, statusEnable, finalSTATUS, hasPrediction, must_update, shouldBranch); // isBranch
 	input [31:0] MWIns;
 	//input [4:0] FDopcode, DXopcode, XMopcode;
 	input [31:0] FDIns, DXIns, XMIns;
@@ -1211,6 +1257,8 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	//output [31:0] newSTATUS, hasPrediction; // newSTATUS will be 32'd1 if must_update
 	output [31:0] finalSTATUS, hasPrediction; // newSTATUS will be 32'd1 if must_update
 	input must_update;
+	
+	input shouldBranch;
 	
 	wire [31:0] newSTATUS;
 	
@@ -1238,7 +1286,8 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	assign nextPC[1] = ~MWopcode[4] & ~MWopcode[3] & MWopcode[2] & ~MWopcode[1] & ~MWopcode[0];
 	***/
 	// 01 : {00001, 00011}; 10 : {00100}
-	assign nextPC[0] = (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & ~FDopcode[1] & FDopcode[0]) | (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & FDopcode[1] & FDopcode[0]);
+	// ONLY ASSIGN JUMP IF BRANCH IS NOT BEING TAKEN!
+	assign nextPC[0] = (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & ~FDopcode[1] & FDopcode[0] & ~shouldBranch) | (~FDopcode[4] & ~FDopcode[3] & ~FDopcode[2] & FDopcode[1] & FDopcode[0] & ~shouldBranch) | (BEX & shouldBranch);
 	assign nextPC[1] = ~FDopcode[4] & ~FDopcode[3] & FDopcode[2] & ~FDopcode[1] & ~FDopcode[0];
 	
 	
@@ -3633,7 +3682,7 @@ endmodule
 ***/
 
 
-module inputController(clock, reset, start, inleft, inright, inshoot, instop, speedData, shootData, resetSpeedNextNext, resetShootNextNext, ioInterrupt); // modify such that reading of speed/shoot resets it
+module inputController(clock, reset, pause, inleft, inright, inshoot, instop, speedData, shootData, resetSpeedNextNext, resetShootNextNext, ioInterrupt); // modify such that reading of speed/shoot resets it
 	input clock, reset;
 	input inleft, inright, inshoot, instop; // active-high pulses from push-buttons
 	output [31:0] speedData; // will latch last value until stop is pressed
@@ -3643,7 +3692,7 @@ module inputController(clock, reset, start, inleft, inright, inshoot, instop, sp
 	//input resetSpeedNext, resetShootNext;
 	input resetSpeedNextNext, resetShootNextNext;
 	
-	input start;
+	input pause;
 	wire left, right, stop, shoot;
 	
 	//assign left = ~inleft;
@@ -3706,9 +3755,9 @@ module inputController(clock, reset, start, inleft, inright, inshoot, instop, sp
 	// TRY SAME LATCHING STRATEGY AS MENTIONED ABOVE
 	//myDFFE latchShot(nextShot, clock, reset & resetShoot, shootWriteEnable, shootData);
 	
-	myDFFE latchNewInterrupt(start, clock, reset, 1'b1, newInterrupt);
+	myDFFE latchNewInterrupt(pause, clock, reset, 1'b1, newInterrupt);
 	myDFFE latchOldInterrupt(newInterrupt, clock, reset, 1'b1, oldInterrupt);
-	assign ioInterrupt = (oldInterrupt ^ newInterrupt) ? start : 1'b0;
+	assign ioInterrupt = (oldInterrupt ^ newInterrupt) ? pause : 1'b0;
 
 endmodule
 

@@ -4,18 +4,20 @@ init:
 addi $r20, $r0, 470 
 addi $r28, $r0, 100 
 addi $r21, $r0, 400
-add $r4, $r21, $r0 
+add $r4, $r21, $r0
+add $r9, $r4, $r0 
 addi $r22, $r0, 590
 addi $r29, $r0, 30 
 addi $r1, $r0, 300
 add $r3, $r1, $r0
+add $r8, $r3, $r0
 addi $r11, $r0, 300 
 addi $r13, $r0, 40
 addi $r27, $r0, 4
 add $r14, $r11, $r0
 add $r15, $r13, $r0 
 addi $r19, $r0, 16 
-addi $r7, $r0, 50 
+addi $r7, $r0, 50
 
 loop:
 add $r0, $r0, $r0
@@ -25,6 +27,9 @@ bne $r6, $r0, spawnBullet
 continue:
 blt $r4, $r13, resetBullet
 
+alsoContinue:
+blt $r9, $r13, resetSecondBullet
+
 continue2:
 blt $r4, $r21, moveBullet
 
@@ -33,6 +38,13 @@ bne $r4, $r21, continue3
 add $r3, $r1, $r0
 
 continue3:
+blt $r9, $r21, moveSecondBullet
+
+hideSecondBullet:
+bne $r9, $r21, continue4
+add $r8, $r1, $r0
+
+continue4:
 blt $r13, $r15, moveEnemyBullet
 
 hideEnemyBullet:
@@ -41,20 +53,37 @@ add $r14, $r11, $r0
 next:
 jal moveEnemy
 
-checkEnemyCollisionY:
+
+shouldEnemyDie1:
 addi $r23, $r13, 20
-blt $r4, $r23, checkEnemyCollisionX1
-j movePlayer
+blt $r4, $r23, checkEnemyCollision1X1
+j shouldEnemyDie2
 
-checkEnemyCollisionX1:
+checkEnemyCollision1X1:
 addi $r23, $r11, -20 
-blt $r23, $r3, checkEnemyCollisionX2
-j movePlayer
+blt $r23, $r3, checkEnemyCollision1X2
+j shouldEnemyDie2
 
-checkEnemyCollisionX2:
+checkEnemyCollision1X2:
 addi $r23, $r11, 20 
 blt $r3, $r23, killEnemy
+j shouldEnemyDie2
+
+shouldEnemyDie2:
+addi $r23, $r13, 20
+blt $r9, $r23, checkEnemyCollision2X1
 j movePlayer
+
+checkEnemyCollision2X1:
+addi $r23, $r11, -20 
+blt $r23, $r8, checkEnemyCollision2X2
+j movePlayer
+
+checkEnemyCollision2X2:
+addi $r23, $r11, 20 
+blt $r8, $r23, killEnemy
+j movePlayer
+
 
 movePlayer:
 add $r1, $r1, $r2
@@ -121,10 +150,25 @@ moveBullet:
 sub $r4, $r4, $r5
 j continue3
 
+moveSecondBullet:
+sub $r9, $r9, $r10
+j continue4
+
+
 spawnBullet:
+blt $r4, $r21, spawnSecondBullet
 add $r3, $r1, $r0
 addi $r4, $r21, -20
 addi $r5, $r0, 50
+addi $r25, $r25, 1
+and $r6, $r0, $r6 
+j continue
+
+
+spawnSecondBullet:
+add $r8, $r1, $r0
+addi $r9, $r21, -20
+addi $r10, $r0, 50
 addi $r25, $r25, 1
 and $r6, $r0, $r6 
 j continue
@@ -134,8 +178,14 @@ resetBullet:
 add $r3, $r1, $r0
 add $r4, $r0, $r21
 add $r5, $r0, $r0
-j continue2
+j alsoContinue
 
+
+resetSecondBullet:
+add $r8, $r1, $r0
+add $r9, $r0, $r21
+add $r10, $r0, $r0
+j continue2
 
 
 spawnEnemy:
@@ -192,8 +242,12 @@ j movePlayer
 
 
 pause:
-bex loop
+bex resume
 j pause
+
+resume:
+setx 0
+j loop
 
 
 win:
