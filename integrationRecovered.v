@@ -143,12 +143,12 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	Hexadecimal_To_Seven_Segment hex2(displayScore[7:4], seg2);
 	
 	// KILL THE OTHER HEX SEGMENTS SO THEY DON'T RANDOMLY LIGHT UP AND MESS UP OUR GRADE
-	assign seg3 = 7'b1;
-	assign seg4 = 7'b1;
-	assign seg5 = 7'b1;
-	assign seg6 = 7'b1;
-	assign seg7 = 7'b1;
-	assign seg8 = 7'b1;
+	assign seg3 = {7{1'b1}};
+	assign seg4 = {7{1'b1}};
+	assign seg5 = {7{1'b1}};
+	assign seg6 = {7{1'b1}};
+	assign seg7 = {7{1'b1}};
+	assign seg8 = {7{1'b1}};
 	
 	// the other seven segment displays are currently set to 0
 	//Hexadecimal_To_Seven_Segment hex3(4'b0, seg3);
@@ -178,7 +178,7 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	
 endmodule
 
-module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, bulletX2Position, bulletY2Position, win, lose, ioException, testInput, multDivVal, multDivRD, multDivResultRDY, multDivInputRDY, multDivException, ALUInputA, ALUInputB, ALUIn1Bypass, ALUIn2Bypass, RegWriteDSel, FDIns, DXIns, XMIns, MWIns, RegWE, RD);
+module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, bulletX2Position, bulletY2Position, win, lose, ioException, testInput);
 
 	input 			inclock, INreset, ps2_key_pressed;
 	input 	[7:0]	ps2_out;
@@ -205,13 +205,14 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	myDFFE setBadOutcome(RegWriteData[31], clock, reset, writingEndState, lose);
 	
+	
 	// DEBUG
 	output [31:0] RegWriteData;
 	output ioException;
 	assign ioException = ioInterrupt;
 	output testInput;
 	assign testInput = start;
-	
+	/***
 	output [31:0] multDivVal;
 	output [4:0] multDivRD;
 	output multDivResultRDY, multDivInputRDY, multDivException;
