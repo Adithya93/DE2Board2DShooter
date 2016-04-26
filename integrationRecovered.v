@@ -44,6 +44,8 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	//output [4:0] testPC;
 	output [6:0] testPC;
 	
+	
+	
 	//output [31:0] toVGA;
 	output [9:0] playerXPosition, bulletXPosition;
 	output [8:0] bulletYPosition;
@@ -141,12 +143,12 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	Hexadecimal_To_Seven_Segment hex2(displayScore[7:4], seg2);
 	
 	// KILL THE OTHER HEX SEGMENTS SO THEY DON'T RANDOMLY LIGHT UP AND MESS UP OUR GRADE
-	assign seg3 = 7'b0;
-	assign seg4 = 7'b0;
-	assign seg5 = 7'b0;
-	assign seg6 = 7'b0;
-	assign seg7 = 7'b0;
-	assign seg8 = 7'b0;
+	assign seg3 = 7'b1;
+	assign seg4 = 7'b1;
+	assign seg5 = 7'b1;
+	assign seg6 = 7'b1;
+	assign seg7 = 7'b1;
+	assign seg8 = 7'b1;
 	
 	// the other seven segment displays are currently set to 0
 	//Hexadecimal_To_Seven_Segment hex3(4'b0, seg3);
@@ -176,7 +178,7 @@ module skeletonRecovered(	master_clk, resetn, IRDA_RXD,/*ps2_clock, ps2_data,*/d
 	
 endmodule
 
-module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, bulletX2Position, bulletY2Position, win, lose, ioException, testInput);
+module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write, lcd_data, debug_data, debug_addr, start, left, right, stop, shoot, leds, outclock, readingPos, testPC, playerXPosition, playerYPosition, bulletXPosition, bulletYPosition, enemyXPosition, enemyYPosition, displayScore, RegWriteData, speedData, shootData, readingBulletX, readingBulletY, enemyBulletXPosition, enemyBulletYPosition, readingEnemyBulletX, readingEnemyBulletY, bulletX2Position, bulletY2Position, win, lose, ioException, testInput, multDivVal, multDivRD, multDivResultRDY, multDivInputRDY, multDivException, ALUInputA, ALUInputB, ALUIn1Bypass, ALUIn2Bypass, RegWriteDSel, FDIns, DXIns, XMIns, MWIns, RegWE, RD);
 
 	input 			inclock, INreset, ps2_key_pressed;
 	input 	[7:0]	ps2_out;
@@ -209,6 +211,16 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	assign ioException = ioInterrupt;
 	output testInput;
 	assign testInput = start;
+	
+	output [31:0] multDivVal;
+	output [4:0] multDivRD;
+	output multDivResultRDY, multDivInputRDY, multDivException;
+	output [31:0] ALUInputA, ALUInputB;
+	output ALUIn1Bypass, ALUIn2Bypass;
+	output [2:0] RegWriteDSel;
+	output [31:0] FDIns, DXIns, XMIns, MWIns;
+	output RegWE;
+	output [4:0] RD;
 	//output BEX, shouldBranch2;
 	//output [31:0] STATUS;
 	//output writeStatus;
@@ -268,19 +280,19 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	wire [1:0] ALUIn2Bypass;
 	***/
 	
-	wire updateBulletSpeed;
+	//wire updateBulletSpeed;
 	//wire updateBulletSpeed2;
 	
-	assign updateBulletSpeed = (MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & MWIns[27]);
+	//assign updateBulletSpeed = (MWIns[31] & MWIns[30] & ~MWIns[29] & ~MWIns[28] & MWIns[27]);
 	
-	myDFFE latchBulletUpdate(updateBulletSpeed, clock, reset, 1'b1, updateBulletSpeed2);
+	//myDFFE latchBulletUpdate(updateBulletSpeed, clock, reset, 1'b1, updateBulletSpeed2);
 	
 	//myDFFE latchBulletSpeed(RegWriteData[0], clock, reset, updateBulletSpeed, bulletSpeed);
-	myDFFE latchBulletSpeed(allOtherData[0], clock, reset, updateBulletSpeed, bulletSpeed);
+	//myDFFE latchBulletSpeed(allOtherData[0], clock, reset, updateBulletSpeed, bulletSpeed);
 
 	//myDFFE latchBulletSpeed2(RegWriteData[0], ~clock, reset, updateBulletSpeed, bulletSpeed2);
 	//myDFFE latchBulletSpeed2(allOtherData[0], ~clock, reset, updateBulletSpeed, bulletSpeed2);
-	myDFFE latchBulletSpeed2(RegWriteData[0], clock, reset, updateBulletSpeed | updateBulletSpeed2, bulletSpeed2);
+	//myDFFE latchBulletSpeed2(RegWriteData[0], clock, reset, updateBulletSpeed | updateBulletSpeed2, bulletSpeed2);
 	
 	//myDFFE latchBulletSpeed3(bulletSpeed2, clock, reset, bulletSpeed2, bulletSpeed3);
 
@@ -491,22 +503,22 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	
 	//eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, RegWriteData);
 	// CHANGE TO WIRE SPEED DIRECTLY INTO 2-1 MUX WITH
-	wire [31:0] allOtherData;
+	//wire [31:0] allOtherData;
 	
-	eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, allOtherData);
-
-	assign RegWriteData = (updateBulletSpeed | updateBulletSpeed2) ? extendedShootData : allOtherData;
+	//eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, allOtherData);
+	eightOneMux RegWriteDSelector(MWALUOutput, MWMemData, multDivVal, MWPC, speedData, extendedShootData, speedData, extendedShootData, RegWriteDSel, RegWriteData);
+	//assign RegWriteData = (updateBulletSpeed | updateBulletSpeed2) ? extendedShootData : allOtherData;
 	
-	assign bulletSpeed3 = extendedShootData[0];
+	//assign bulletSpeed3 = extendedShootData[0];
 	
 	//assign sanityCheck = bulletSpeed3 & updateBulletSpeed;
 	// DEBUG ONLY
-	myDFFE latchSanityCheck(bulletSpeed3 & updateBulletSpeed, clock, reset, updateBulletSpeed, sanityCheck);
+	//myDFFE latchSanityCheck(bulletSpeed3 & updateBulletSpeed, clock, reset, updateBulletSpeed, sanityCheck);
 	
 	
-	myDFFE latchSanityCheck2(bulletSpeed3 & updateBulletSpeed2, clock, reset, updateBulletSpeed2, sanityCheck2);
+	//myDFFE latchSanityCheck2(bulletSpeed3 & updateBulletSpeed2, clock, reset, updateBulletSpeed2, sanityCheck2);
 	
-	myDFFE latchRegFileInput(RegWriteData[0], clock, reset, updateBulletSpeed, regFileInput);
+	//myDFFE latchRegFileInput(RegWriteData[0], clock, reset, updateBulletSpeed, regFileInput);
 	//assign regFileInput = RegWriteData[0];
 	
 	
@@ -665,6 +677,7 @@ module processorRecovered(inclock, INreset, ps2_key_pressed, ps2_out, lcd_write,
 	wire warStall;
 	
 	// Use ALUInputA and ALUInputB in place of DXRS1Val and DXRS2Val to hitchhike on MX/WX bypass logic
+		
 	multDivControl myMultDivCTRL(clock, DXIns, ALUInputA, ALUInputB, reset, multDivVal, multDivRD, multDivResultRDY, multDivInputRDY, multDivException);
 	
 	multDivStalls multDivHazards(FDIns, XMIns, RS2Sel, multDivResultRDY, multDivInputRDY, multDivRD, dataStructStall, warStall);
@@ -1251,6 +1264,8 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	output [4:0] RD;
 	output [4:0] ALUOpcode;
 	
+	wire MWisMultDiv;
+	assign MWisMultDiv = (~MWIns[6] & ~MWIns[5] & MWIns[4] & MWIns[3]);
 
 	
 	output statusEnable; // Modify to allow clockAdapter to write to it
@@ -1278,7 +1293,7 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	// Any non-zero value in multDivOpcode for mult-div
 	// JAL : 00011
 	// FOR PROJECT : INCLUDE I/O instruction getSpeed (11000) and getShoot (11001)
-	assign RegWE = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & ~MWopcode[1] & ~MWopcode[0]) | (~MWopcode[4] & ~MWopcode[3] & MWopcode[2] & ~MWopcode[1] & MWopcode[0]) | (~MWopcode[4] & MWopcode[3] & ~MWopcode[2] & ~MWopcode[1] & ~MWopcode[0]) | RegWriteD[1] | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]) | (MWopcode[4] & MWopcode[3] & ~MWopcode[2] & ~MWopcode[1]);
+	assign RegWE = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & ~MWopcode[1] & ~MWopcode[0] & ~MWisMultDiv) | (~MWopcode[4] & ~MWopcode[3] & MWopcode[2] & ~MWopcode[1] & MWopcode[0]) | (~MWopcode[4] & MWopcode[3] & ~MWopcode[2] & ~MWopcode[1] & ~MWopcode[0]) | RegWriteD[1] | (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]) | (MWopcode[4] & MWopcode[3] & ~MWopcode[2] & ~MWopcode[1]);
 	
 	/*** WRONG, JUMP LOOKS AT FD! NOT MW!
 	// 01 : {00001, 00011}; 10 : {00100}
@@ -1327,7 +1342,9 @@ module control(FDIns, DXIns, XMIns, MWIns, multDivResultRDY, multDivException, m
 	wire [1:0] RDSel;
 	assign RDSel[0] = RegWriteD[1];
 	assign RDSel[1] = (~MWopcode[4] & ~MWopcode[3] & ~MWopcode[2] & MWopcode[1] & MWopcode[0]);
-	fourOneMux5 RDSelector(MWIns[26:22], MWIns[26:22], multDivRD, {5{1'b1}}, RDSel, RD);
+	//fourOneMux5 RDSelector(MWIns[26:22], MWIns[26:22], multDivRD, {5{1'b1}}, RDSel, RD);
+	fourOneMux5 RDSelector(MWIns[26:22], multDivRD, MWIns[26:22], {5{1'b1}}, RDSel, RD);
+
 	
 	// ALUOpcode : For R-type instructions, just DXIns[6:2]
 	// For I-type instructions, add : {00111, 01000}; sub : {00010, 00110}
@@ -1538,17 +1555,17 @@ module multDivControl(clock, ins, opA, opB, reset, result, writeReg, resultRDY, 
 	input clock, reset;
 	output [31:0] result;
 	output [4:0] writeReg;
-	output resultRDY, inputRDY, exception; // If multDiv is not inputRDY and new multDiv ins arrives,
+	output inputRDY, exception; // If multDiv is not inputRDY and new multDiv ins arrives,
 										 // need to stall for structural hazard
 	//output mult, div; // REMEMBER TO CHANGE BACK TO WIRE
-	
+	output resultRDY;
 	//wire [7:0] RDs [4:0]; // When pipelining multDiv
 	wire [4:0] RD; // Must latch
 	wire [4:0] op; 
 	wire mult, div;
 	assign op = ins[6:2];
 	assign RD = ins[26:22];
-	
+	//wire resultRDY;
 	wire isRType;
 	assign isRType = (~ins[31] & ~ins[30] & ~ins[29] & ~ins[28] & ~ins[27]);
 	assign mult = (~op[4] & ~op[3] & op[2] & op[1] & ~op[0]) & isRType;
@@ -1571,18 +1588,23 @@ module multDivControl(clock, ins, opA, opB, reset, result, writeReg, resultRDY, 
 	assign oldOrNewMult = multInProgress | mult;
 	assign nextMult = ~multRDY & oldOrNewMult;
 	***/
-	myDFFE latchMult(mult, clock, reset, mult | resultRDY, multInProgress);
-	myDFFE latchDiv(div, clock, reset, div | resultRDY, divInProgress);
+	myDFFE latchMult(mult, ~clock, reset, mult | resultRDY, multInProgress);
+	myDFFE latchDiv(div, ~clock, reset, div | resultRDY, divInProgress);
 	
 	// Latch RD - Invert its clock since it is reading mult | div which change on posEdge
 	Register5 RDLatch(~clock, mult | div | inputRDY, RD, reset, currentRD);
 	assign writeReg = currentRD;
 	// Latch opA & opB
-	assign currentOpA = opA; // Check if it works without latching
-	assign currentOpB = opB;
+	//assign currentOpA = opA; // Check if it works without latching
+	//assign currentOpB = opB;
+	
+	Register32 latchOpA(~clock, mult | div | resultRDY, opA, reset, currentOpA);
+	Register32 latchOpB(~clock, mult | div | resultRDY, opB, reset, currentOpB);
+	
+	//assign bufferedResultRDY = resultRDY ? 1'b1 : 1'b0;
 	
 	
-	multDiv multDiv0(currentOpA, currentOpB, multInProgress, divInProgress, clock, result, exception, inputRDY, resultRDY);
+	multDiv multDiv0(currentOpA, currentOpB, multInProgress, divInProgress, ~clock, result, exception, inputRDY, resultRDY);
 
 endmodule
 
@@ -2380,14 +2402,20 @@ module multDiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	assign divEnable = divEnabled | ctrl_DIV | prevDivEnabled | prevDivEnabled2 | prevDivEnabled3;
 	
 	tristate32 multResultTriState(mult_result, multEnable, data_result);
-	tristate multExceptionTriState(mult_exception, multEnable, data_exception);
-	tristate multInputRDYTriState(mult_inputRDY, multEnable, data_inputRDY);
-	tristate multOutputRDYTriState(mult_resultRDY, multEnable, data_resultRDY);
+	//tristate multExceptionTriState(mult_exception, multEnable, data_exception);
+	//tristate multInputRDYTriState(mult_inputRDY, multEnable, data_inputRDY);
+	//tristate multOutputRDYTriState(mult_resultRDY, multEnable, data_resultRDY);
 
 	tristate32 divResultTriState(div_result, divEnable, data_result);
-	tristate divExceptionTriState(div_exception, divEnable, data_exception);
-	tristate divInputRDYTriState(div_inputRDY, divEnable, data_inputRDY);
-	tristate divOutputRDYTriState(div_resultRDY, divEnable, data_resultRDY);
+	//tristate divExceptionTriState(div_exception, divEnable, data_exception);
+	//tristate divInputRDYTriState(div_inputRDY, divEnable, data_inputRDY);
+	//tristate divOutputRDYTriState(div_resultRDY, divEnable, data_resultRDY);
+	
+	
+	// MAKE RESULTDY, INPUTRDY and EXCEPTION NON-IMPEDANCE
+	assign data_resultRDY = (mult_resultRDY | div_resultRDY) ? 1'b1 : 1'b0;
+	assign data_inputRDY = (mult_inputRDY & div_inputRDY) ? 1'b1 : 1'b0;
+	assign data_exception = (mult_exception | div_exception) ? 1'b1 : 1'b0;
 	
 	//mult multiplier(data_operandA, data_operandB, ctrl_MULT, clock, mult_result, mult_exception, mult_inputRDY, mult_resultRDY);
 	//multDebug multiplier(data_operandA, data_operandB, ctrl_MULT, clock, mult_result, mult_exception, mult_inputRDY, mult_resultRDY);

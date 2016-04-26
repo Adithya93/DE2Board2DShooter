@@ -6,8 +6,8 @@ addi $r28, $r0, 100
 addi $r21, $r0, 400
 add $r4, $r21, $r0
 add $r9, $r4, $r0 
-addi $r22, $r0, 590
-addi $r29, $r0, 30 
+addi $r22, $r0, 610
+addi $r29, $r0, 20 
 addi $r1, $r0, 300
 add $r3, $r1, $r0
 add $r8, $r3, $r0
@@ -56,8 +56,14 @@ jal moveEnemy
 
 shouldEnemyDie1:
 addi $r23, $r13, 20
-blt $r4, $r23, checkEnemyCollision1X1
+blt $r4, $r23, checkEnemyCollision1Y2
 j shouldEnemyDie2
+
+checkEnemyCollision1Y2:
+addi $r23, $r13, -10
+blt $r23, $r4, checkEnemyCollision1X1
+j shouldEnemyDie2
+
 
 checkEnemyCollision1X1:
 addi $r23, $r11, -20 
@@ -71,8 +77,14 @@ j shouldEnemyDie2
 
 shouldEnemyDie2:
 addi $r23, $r13, 20
-blt $r9, $r23, checkEnemyCollision2X1
+blt $r9, $r23, checkEnemyCollision2Y2
 j movePlayer
+
+checkEnemyCollision2Y2:
+addi $r23, $r13, -10
+blt $r23, $r9, checkEnemyCollision2X1
+j movePlayer
+
 
 checkEnemyCollision2X1:
 addi $r23, $r11, -20 
@@ -91,23 +103,27 @@ add $r1, $r1, $r2
 wrapPlayer:
 blt $r22, $r1, respawnLeft
 blt $r1, $r29, respawnRight
-j checkPlayerCollisionY
+j checkPlayerCollisionY1
 
 respawnLeft:
 add $r1, $r29, $r0
-j checkPlayerCollisionY
+j checkPlayerCollisionY1
 
 respawnRight:
 add $r1, $r22, $r0
-j checkPlayerCollisionY
+j checkPlayerCollisionY1
 
-checkPlayerCollisionY:
-addi $r23, $r21, -20
-blt $r23, $r15, checkPlayerCollisionX1
+checkPlayerCollisionY1:
+addi $r23, $r21, -10
+blt $r23, $r15, checkPlayerCollisionY2
 j shouldEnemyShoot
 
+checkPlayerCollisionY2:
+addi $r23, $r21, 10
+blt $r15, $r23, checkPlayerCollisionX1
+
 checkPlayerCollisionX1:
-addi $r23, $r1, -20
+addi $r23, $r1, -10
 blt $r23, $r14, checkPlayerCollisionX2
 j shouldEnemyShoot
 
