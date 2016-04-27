@@ -1,4 +1,4 @@
-module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, appleXInput);
+module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n, up, left, down, right, appleXInput, update_clock);
 	
 	input master_clk, KB_clk, data; //50MHz
 	output reg [7:0]VGA_R, VGA_G, VGA_B;  //Red, Green, Blue VGA signals
@@ -30,14 +30,21 @@ module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_
 	wire update, reset;
 	integer maxSize = 16;
 	
+
+	
 	//input [9:0] appleXInput;
 	input [31:0] appleXInput;
 	
-
-	clk_reduce reduce1(master_clk, VGA_clk); //Reduces 50MHz clock to 25MHz
-	VGA_gen gen1(VGA_clk, xCount, yCount, displayArea, VGA_hSync, VGA_vSync, blank_n);//Generates xCount, yCount and horizontal/vertical sync signals	
-	randomGrid rand1(VGA_clk, rand_X, rand_Y);
-	kbInput kbIn(KB_clk, data, direction, reset);
+	output update_clock;
+	assign update_clock = update;
+	
+	//output [9:0] checkAmt;
+	//assign checkAmt = appleXInput[31:22];
+	
+	//clk_reduce reduce1(master_clk, VGA_clk); //Reduces 50MHz clock to 25MHz
+	//VGA_gen gen1(VGA_clk, xCount, yCount, displayArea, VGA_hSync, VGA_vSync, blank_n);//Generates xCount, yCount and horizontal/vertical sync signals	
+	//randomGrid rand1(VGA_clk, rand_X, rand_Y);
+	//kbInput kbIn(KB_clk, data, direction, reset);
 	updateClk UPDATE(master_clk, update);
 	assign DAC_clk = VGA_clk;
 	//
@@ -46,19 +53,59 @@ module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_
 		border <= (((xCount >= 0) && (xCount < 11) || (xCount >= 630) && (xCount < 641)) || ((yCount >= 0) && (yCount < 11) || (yCount >= 470) && (yCount < 481)));
 	end
 	
-	wire [31:0] nextAppleX;
+	//wire [31:0] nextAppleX;
 	wire [9:0] truncAppleX;
 	
-	myDFFE Register32(update, 1'b1, appleXInput, 1'b1, nextAppleX);
-	assign truncAppleX = nextAppleX[9:0];
+	//myDFFE Register32(update, 1'b1, appleXInput, 1'b1, nextAppleX);
+	//assign truncAppleX = nextAppleX[9:0];
+	assign truncAppleX = appleXInput[9:0];
 	
 	always@(posedge VGA_clk)
 	begin
-		appleX <= 100 + truncAppleX;
-		appleY <= 9'b000000011;
+		appleX <= 100 + 3 * truncAppleX;
+		//appleY <= 9'b000000011;
+		appleY <= 9'd300;
+	end
+
+	clk_reduce reduce1(master_clk, VGA_clk); //Reduces 50MHz clock to 25MHz
+	VGA_gen gen1(VGA_clk, xCount, yCount, displayArea, VGA_hSync, VGA_vSync, blank_n);//Generates xCount, yCount and horizontal/vertical sync signals	
+	randomGrid rand1(VGA_clk, rand_X, rand_Y);
+	
+	//
+	input up, left, down, right;
+	
+	//kbInput kbIn(KB_clk, data, direction, reset);
+	assign direction[0] = 1'b0;
+	assign direction[1] = up;
+	assign direction[2] = left;
+	assign direction[3] = down;
+	assign direction[4] = right;
+	
+	
+	//updateClk UPDATE(master_clk, update);
+	//assign DAC_clk = VGA_clk;
+	
+	//
+	
+	//wire [2:0] lameCount;
+	//wire [9:0] lameInput;
+	//assign lameInput[5:0] = lameCount * 10;
+	//assign lameInput[9:6] = {7{1'b0}};
+	//simpleCount counter(lameCount, update, 1'b0, 1'b1);
+	
+/***	
+	always@(posedge VGA_clk)
+	begin
+		appleX <= 100 + lameInput;
+		//appleY <= 9'b110000000;
+		appleY <= 9'd300;
+	end
+
+	always @(posedge VGA_clk)//---------------------------------------------------------------Added border function
+	begin
+		border <= (((xCount >= 0) && (xCount < 11) || (xCount >= 630) && (xCount < 641)) || ((yCount >= 0) && (yCount < 11) || (yCount >= 470) && (yCount < 481)));
 	end
 	
-	/***
 	always@(posedge VGA_clk)
 	begin
 	appleCount = appleCount+1;
@@ -98,6 +145,7 @@ module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_
 		end
 	end
 	***/
+
 	
 	always @(posedge VGA_clk)
 	begin
@@ -174,7 +222,9 @@ module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_
 	
 									
 	assign R = (displayArea && (apple || game_over));
-	assign G = (displayArea && ((snakeHead||snakeBody) && ~game_over));
+	//assign R = (displayArea && apple);
+	assign G = (displayArea && ((snakeHead||snakeBody) && ~game_over) );
+	//assign G = (displayArea && game_over);
 	assign B = (displayArea && (border && ~game_over) );//---------------------------------------------------------------Added border
 	always@(posedge VGA_clk)
 	begin
@@ -317,6 +367,7 @@ endmodule
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/***
 module kbInput(KB_clk, data, direction, reset);
 
 	input KB_clk, data;
@@ -357,6 +408,67 @@ always@(negedge KB_clk)
 		else direction <= direction;
 	end	
 endmodule
+***/
+
+/***
+module kbInput(KB_clk, data, pos);
+	input KB_clk;//, data;
+	input [3:0] data;
+	//output reg [9:0] pos; 
+	wire [3:0] code;
+	
+	assign code = data;
+	
+	always@(code)
+	begin
+		if(code == 4'h1)
+			pos = 500;
+		else if(code == 4'h2)
+			pos = 550;
+		else if(code == 4'h3)
+			pos = 575;
+		else if(code == 4'h4)
+			pos = 600;
+		else if(code == 4'h5)
+			pos = 610;
+		else if(code == 4'h6)
+			pos = 620;
+		else if(code == 4'h7)
+			pos = 630;
+		else pos <= pos;
+	end	
+endmodule
+***/
+/***
+module kbInput(KB_clk, data, direction, shoot);
+	input KB_clk;//, data;
+	input [3:0] data;
+	//output reg [9:0] pos; 
+	wire [3:0] code;
+	output reg [1:0] direction;
+	output reg shoot;
+	
+	assign code = data;
+	
+	always@(code)
+	begin
+		if(code == 4'h4)
+			direction = 2'd1; // Move left, {01}
+		else if(code == 4'h5)
+			shoot = 1'b1;
+		else if(code == 4'h6)
+			direction = 2'd2; // Move right, {10}
+		else 
+			direction <= direction;
+			shoot <= shoot;
+	end	
+endmodule
+***/
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -368,7 +480,7 @@ module updateClk(master_clk, update);
 	always@(posedge master_clk)
 	begin
 		count <= count + 1;
-		if(count == 1777777)
+		if(count == 296296)
 		begin
 			update <= ~update;
 			count <= 0;

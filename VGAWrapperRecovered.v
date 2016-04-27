@@ -64,6 +64,8 @@ module VGAWrapperRecovered(master_clk, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, 
 	reg [8:0] bullet2Y;
 	//output update_clock;
 	output processor_clock;
+	//output timerInterrupt;
+	//assign timerInterrupt = update;
 	
 	wire startShoot;
 	
@@ -205,7 +207,7 @@ module processorClk(master_clk, processor_clock);
 	always@(posedge master_clk)
 	begin
 		count <= count + 1;
-		if(count == 118516)
+		if(count == 59258)
 		begin
 			processor_clock <= ~processor_clock;
 			count <= 0;
