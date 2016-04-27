@@ -1,0 +1,5 @@
+Info (10281): Verilog HDL Declaration information at VGAWrapper.v(42): object "update" differs only in case from object "UPDATE" in the same scope File: C:/Users/ldona/Desktop/ECE 350/DE2Board2DShooter/Galaga/VGAWrapper.v Line: 42
+Warning (10273): Verilog HDL warning at integration.v(724): extended using "x" or "z" File: C:/Users/ldona/Desktop/ECE 350/DE2Board2DShooter/Galaga/integration.v Line: 724
+Warning (10273): Verilog HDL warning at integration.v(2285): extended using "x" or "z" File: C:/Users/ldona/Desktop/ECE 350/DE2Board2DShooter/Galaga/integration.v Line: 2285
+Info (10281): Verilog HDL Declaration information at integration.v(3227): object "y2" differs only in case from object "Y2" in the same scope File: C:/Users/ldona/Desktop/ECE 350/DE2Board2DShooter/Galaga/integration.v Line: 3227
+Info (10281): Verilog HDL Declaration information at integration.v(3227): object "y1" differs only in case from object "Y1" in the same scope File: C:/Users/ldona/Desktop/ECE 350/DE2Board2DShooter/Galaga/integration.v Line: 3227

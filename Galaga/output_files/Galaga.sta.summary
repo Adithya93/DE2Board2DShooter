@@ -1,0 +1,173 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -24.639
+TNS   : -25312.696
+
+Type  : Slow 1200mV 85C Model Setup 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -4.859
+TNS   : -159.139
+
+Type  : Slow 1200mV 85C Model Setup 'master_clk'
+Slack : -4.031
+TNS   : -248.426
+
+Type  : Slow 1200mV 85C Model Setup 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : -0.912
+TNS   : -42.589
+
+Type  : Slow 1200mV 85C Model Hold 'master_clk'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : 0.515
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : 0.618
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.546
+TNS   : -335.504
+
+Type  : Slow 1200mV 85C Model Removal 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 1.209
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'master_clk'
+Slack : -3.000
+TNS   : -179.045
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.693
+TNS   : -3111.228
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : -1.285
+TNS   : -122.075
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.285
+TNS   : -73.245
+
+Type  : Slow 1200mV 0C Model Setup 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -22.591
+TNS   : -23149.893
+
+Type  : Slow 1200mV 0C Model Setup 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -4.358
+TNS   : -140.525
+
+Type  : Slow 1200mV 0C Model Setup 'master_clk'
+Slack : -3.644
+TNS   : -212.038
+
+Type  : Slow 1200mV 0C Model Setup 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : -0.747
+TNS   : -31.619
+
+Type  : Slow 1200mV 0C Model Hold 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'master_clk'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : 0.489
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : 0.564
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.186
+TNS   : -296.266
+
+Type  : Slow 1200mV 0C Model Removal 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 1.103
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'master_clk'
+Slack : -3.000
+TNS   : -179.045
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -2.649
+TNS   : -3107.004
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : -1.285
+TNS   : -122.075
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.285
+TNS   : -73.245
+
+Type  : Fast 1200mV 0C Model Setup 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -11.679
+TNS   : -11978.229
+
+Type  : Fast 1200mV 0C Model Setup 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.881
+TNS   : -52.167
+
+Type  : Fast 1200mV 0C Model Setup 'master_clk'
+Slack : -1.524
+TNS   : -54.551
+
+Type  : Fast 1200mV 0C Model Setup 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : -0.247
+TNS   : -4.770
+
+Type  : Fast 1200mV 0C Model Hold 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'master_clk'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : 0.280
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : 0.542
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -0.881
+TNS   : -102.359
+
+Type  : Fast 1200mV 0C Model Removal 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : 0.570
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'master_clk'
+Slack : -3.000
+TNS   : -148.562
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapper:testVGA|processorClk:getProcessorClock|processor_clock'
+Slack : -1.000
+TNS   : -2316.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapper:testVGA|updateClk:UPDATE|update'
+Slack : -1.000
+TNS   : -95.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGAWrapper:testVGA|clk_reduce:reduce1|VGA_clk'
+Slack : -1.000
+TNS   : -57.000
+
+------------------------------------------------------------
